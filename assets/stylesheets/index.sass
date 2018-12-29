@@ -1,0 +1,97 @@
+@import "bootstrap"
+
+html, body
+    margin: 0
+    padding: 0
+
+html
+    +media-breakpoint-down(md)
+        font-size: 15px
+    +media-breakpoint-down(xs)
+        font-size: 13px
+
+#main
+    @import "index"
+    @import "features"
+    @import "download"
+
+.svg-inline--fa
+    margin-right: 0.5rem
+
+body.index
+    +media-breakpoint-down(xs)
+        #main
+            .title
+                padding-top: 11.875rem
+        #header
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            z-index: 1000
+            .navbar
+                transition: all 0.3s ease-out !important
+                box-shadow: 0 0 6px transparentize(#000, .75)
+                &:not(.expanded)
+                    border: none
+                    background-color: transparent
+                    box-shadow: 0 0 6px transparent
+
+#header
+    .navbar
+        background-color: $light
+        border-bottom: 1px solid $gray-300
+        .navbar-brand img
+            width: 2rem
+        .navbar-toggler
+            border: none
+        .nav-link
+            padding-left: .75rem
+            padding-right: .75rem
+            &.stressed
+                background: $gray-200
+                border-radius: 2rem
+                &:hover
+                    background: darken($gray-200, 5%)
+                &.right
+                    border-radius: 0 2rem 2rem 0
+                &.left
+                    border-radius: 2rem 0 0 2rem
+        +media-breakpoint-down(xs)
+            .navbar-brand
+                padding: .5rem
+                img
+                    width: 2.461538462rem
+            .nav-item
+                &:first-child
+                    margin-top: 0.75rem
+                    border-top: 1px solid $gray-300
+                &:not(:last-child)
+                    border-bottom: 1px solid $gray-300
+                @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+                    &:first-child
+                        border-top: 0.5px solid $gray-300
+                    &:not(:last-child)
+                        border-bottom: 0.5px solid $gray-300
+            .nav-link
+                line-height: 3
+                &.stressed
+                    &.left, &.right
+                        background: none
+                .svg-inline--fa
+                    display: none
+
+footer
+    background: $gray-900
+    color: #bbb
+    padding: 2rem 0
+    font-size: 0.9rem
+    a
+        color: #efefef
+        &:hover, &:active
+            color: #fff
+    .author
+        padding: 2rem 0
+        margin: 0
+    hr
+        border-color: $gray-800

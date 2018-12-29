@@ -1,0 +1,91 @@
+.nav
+    padding: 1rem 0 1.5rem 0
+    .nav-container
+        h2
+            margin: 1rem 0 0.5rem 0
+
+.features
+    padding: 0 0 1rem 0
+    .features-container
+        margin-left: -2px
+        margin-right: -2px
+        display: flex
+        align-items: stretch
+        align-content: stretch
+        flex-wrap: wrap
+        .feature-block
+            padding: 2px
+            &.half
+                flex-basis: 50%
+                @media(max-width: 920px)
+                    flex-basis: 100%
+                .feature-content p
+                    @media(min-width: 920px)
+                        margin: 0 5%
+            &.full
+                flex-basis: 100%
+                .feature-content p
+                    padding: 0 2rem
+                    @media(min-width: 920px)
+                        margin: 0 10%
+            .feature-img
+                img
+                    max-width: 100%
+                    min-width: 100%
+            .feature-content
+                height: 100%
+                background: #f4f4f4
+                padding: 4rem
+                transition: all 0.15s ease-in
+                @media(max-width: 767px)
+                    padding: 3rem 1rem
+                h4
+                    margin: 0 0 1.5rem 0
+                    text-align: center
+                    font-size: 1.5rem
+                p
+                    text-align: center
+                    margin: 0
+                    line-height: 1.5
+                .content.dark
+                    display: none
+                &.dark
+                    background: #222
+                    color: #eee
+                    .content.dark
+                        display: block
+                    .content.light
+                        display: none
+                    .segment
+                        border-color: #999
+                        &.active
+                            background: #777
+                        &:hover
+                            background: #666
+                &.mmode
+                    background: url('/media/feature-mmode-bg.png')
+                    background-size: auto 100%
+                    background-position: center
+                    color: #fff
+                    text-shadow: 0 0 4px #444
+                    h4
+                        margin-top: 400px
+        .segment-control
+            margin: 1rem auto
+            text-align: center
+            font-size: 0.75rem
+            .segment
+                display: inline-block
+                padding: 0.35rem 0.75rem
+                border: 1px solid #ccc
+                cursor: pointer
+                &:first-child
+                    border-radius: 3px 0 0 3px
+                &:last-child
+                    border-radius: 0 3px 3px 0
+                &:not(:last-child)
+                    border-right: 0
+                &.active
+                    background: #ccc
+                &:hover
+                    background: #ddd

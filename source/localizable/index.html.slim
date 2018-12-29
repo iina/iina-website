@@ -1,0 +1,135 @@
+---
+title: IINA - The modern media player for macOS
+html_class: index
+---
+
+section.title
+    .background
+        svg width="100%" height="100%" viewBox="0 0 1200 800"
+            circle cx=100 cy=120 r=500 fill="#42b0ff" fill-opacity=0.05
+            circle cx=900 cy=620 r=140 fill="#ff4294" fill-opacity=0.05
+            circle cx=360 cy=840 r=360 fill="#ff9142" fill-opacity=0.05
+            circle cx=1000 cy=180 r=180 fill="#42ff91" fill-opacity=0.05
+    .container.position-relative
+        .sample-image
+            = image_tag "sc-sky.png", alt: "Screenshot"
+        .small-headline = "/ˈɪːna/"
+        h1.headline
+            | IINA
+        p.sub-headline
+            | The&nbsp;
+            span.modern modern
+            | &nbsp;media player for macOS.
+        .download
+            = link_to 'https://github.com/iina/iina', class: 'dl-btn github' do
+                span.fab.fa-github
+                | &nbsp;GitHub
+                span.light GPLv3
+            / br
+            - latest = data.versions.stable.first.version
+            = link_to download_link(latest), class: 'dl-btn dmg' do
+                span.fas.fa-cloud-download-alt
+                | &nbsp;Download
+                span.light v#{latest}
+        p.requirement
+            | Requires macOS 10.11+, 10.14 recommended
+        p.other-downloads
+            = link_to 'Download beta releases or nightly builds', localized_path('/download')
+
+section.highlight.highlight--macos
+    .container
+        h2 For and only for modern macOS.
+        p
+            | IINA is born to be a modern macOS application, from its framework to the user interface. It adopts the post-Yosemite design language of macOS and keeps up the pace of new technologies like Force Touch, Touch Bar, and Picture-in-Picture.
+        .highlight-features
+            .item.item--forcetouch
+                .left
+                    .decoration-line
+                    .item-name.bg-1 Dark Mode
+                    .item-desc IINA ships with a carefully crafted user interface for the macOS Mojave dark mode, which includes adjusted colors, icons and textures, providing a sleek and unified look.
+                .right
+                    .item-img
+                        = image_tag "feature-1.png", width: 800
+            .item.item--pip.reversed
+                .right
+                    .decoration-line
+                    .item-name.bg-3 Picture-in-Picture
+                    .item-desc IINA supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without being distracted.
+                .left
+                    .item-img
+                        = image_tag "feature-2.png", width: 800
+            .more-features
+                h4 More Features
+                .features
+                    .left.bg-large-l
+                        | Touch Bar
+                        br
+                        | System Media Control
+                        br
+                        | Customizable UI
+                        br
+                        | Online Subtitles
+                    .right.bg-large-r
+                        | Music Mode
+                        br
+                        | Mouse & Trackpad Gestures
+                        br
+                        | Thumbnail Preview
+                        br
+                        | Plugin System
+                = link_to'#', class: 'highlight-link' do
+                    div Screenshots
+                    .comming-soon Comming soon
+
+section.highlight.highlight--playback
+    .background
+        svg width="100%" height="100%" viewBox="0 0 1200 800"
+            circle cx=150 cy=200 r=120 fill="#99e1d0" fill-opacity=0.03
+            circle cx=450 cy=700 r=180 fill="#99e1d0" fill-opacity=0.03
+            circle cx=1100 cy=80 r=500 fill="#42b0ff" fill-opacity=0.05
+            g transform="translate(1100,120)"
+                path d="M-150,220 L-150,-220 L300,0 z" fill="#fff" fill-opacity=0.03
+    .container
+        .content
+            h2 Plays anything.
+            markdown:
+                Powered by the open source media player mpv, IINA can play almost every media file you have.
+                With the support of youtube-dl and our browser extensions, you can also play a variety of online streams in IINA via one click.
+        .items.mb-4
+            .item
+                .item-icon
+                    span.fas.fa-file-video.fa-2x.m-0
+                .item-text Local files
+            .item
+                .item-icon
+                    span.fas.fa-globe-americas.fa-2x.m-0
+                .item-text Online streams
+            .item
+                .item-icon
+                    span.fab.fa-youtube.fa-2x.m-0
+                .item-text Youtube playlists
+        .content
+            = link_to localized_path('/download#browser-extensions') do
+                | Download browser extensions
+                span.fas.fa-angle-right.ml-2
+
+section.highlight.highlight--opensource
+    .container
+        .swift-bg
+            = image_tag "swift.svg"
+        .content
+            h2 Free, open source, in active development.
+            markdown:
+                Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license.
+                Please feel free to contribute it by opening an issue, sending a feature request or a bug report on GitHub or by email.
+            = link_to '#', id: 'mail-link', class: 'highlight-link mr-4' do
+                span.fas.fa-envelope
+                span.mr-2 Mail us
+            = link_to 'https://github.com/iina/iina', class: 'highlight-link' do
+                span.fab.fa-github
+                span.mr-2 GitHub repository
+                span.fa.fa-angle-right
+            javascript:
+                document.getElementById('mail-link').href = 'mail' + 'to:deve' + 'loper' + 's@ii' + 'na.io';
+
+/== render '/_contribution.*'

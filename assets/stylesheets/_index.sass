@@ -1,0 +1,268 @@
+@import "variables"
+@import "utils"
+
+p
+    line-height: 1.4
+
+section
+    overflow: hidden
+
+.title
+    background: linear-gradient(to bottom, #fefefe, #eee)
+    padding: 13rem 0
+    +media-breakpoint-down(md)
+        padding: 8rem 0
+    +media-breakpoint-up(xl)
+        padding: 16rem 0
+    .modern
+        color: #111
+        +text-img-bg('/images/text-bg.png')
+    .sample-image
+        position: absolute
+        top: -24%
+        bottom: -42%
+        +media-breakpoint-down(sm)
+            display: none
+        +media-breakpoint-up(md)
+            left: 60%
+        +media-breakpoint-up(lg)
+            left: 45%
+        +media-breakpoint-up(xl)
+            left: 45%
+            top: -20%
+            bottom: -36%
+        img
+            height: 100%
+    .small-headline
+        +font-family-system
+        font-size: 1rem
+        font-weight: 500
+        letter-spacing: .1rem
+        color: #aaa
+        padding-left: 0.15em
+    .headline
+        font-size: 4rem
+        font-weight: normal
+        letter-spacing: .1rem
+        margin: 0
+    .sub-headline
+        font-size: 1.6rem
+        margin: 1rem 0 0 0
+    .requirement, .other-downloads
+        font-size: 0.8rem
+        margin: 1rem 0 0 0
+        color: #777
+    .other-downloads
+        margin: 0.5rem 0 0 0
+    .download
+        margin: 4rem 0 1rem 0
+        .dl-btn
+            display: inline-block
+            background: #111
+            color: #eee
+            font-weight: 500
+            margin: 0.25rem 0
+            padding: .75rem 1.5rem
+            text-decoration: none
+            border-radius: 2rem
+            &:not(:last-child)
+                margin-right: 1rem
+            .light
+                color: #999
+                margin-left: 0.5rem
+                font-size: 0.8em
+                font-weight: normal
+
+
+$gradient0: linear-gradient(135deg, #A8E6CF 0%, #FFD3B6 100%)
+$gradient1: linear-gradient(36deg, #5CCEB3 0%, #6765D0 65%, #6E4D8A 100%)
+
+.highlight
+    h2
+        font-size: 3em
+        font-weight: 500
+    p
+        line-height: 1.6
+
+section
+    position: relative
+    .background
+        +absolute(0)
+        overflow: hidden
+        +media-breakpoint-down(sm)
+            svg
+                height: 120%
+                width: 120%
+
+
+.highlight-link
+    text-decoration: none
+    position: relative
+
+.highlight--macos
+    color: #fff
+    padding: 6rem 0
+    background: linear-gradient(to right, #140A17 0%, #041e2a 50%, #140A17 100%)
+    text-align: center
+    .background
+        +absolute(0)
+        background-image: url(/images/index-bg.svg)
+        background-repeat: repeat
+    h2
+        margin: 0.83rem 0
+    p
+        color: #ccc
+        font-size: 1.2rem
+        margin: 4rem 10% 6rem 10%
+        +media-breakpoint-down(sm)
+            margin: 4rem 4% 0 4%
+    .highlight-features
+        margin: 4rem 0 0 0
+        +media-breakpoint-down(sm)
+            margin: 2rem 0 0 0
+        .item
+            display: flex
+            text-align: left
+            padding: 2rem 0
+            +media-breakpoint-down(md)
+                display: block
+                .decoration-line
+                    display: none
+                &:not(.reversed) .left, &.reversed .right
+                    margin-bottom: 1.6rem
+            +media-breakpoint-up(md)
+                &.reversed
+                    flex-direction: row-reverse
+                .left
+                    padding-right: 1rem
+                .right
+                    padding-left: 1rem
+                .decoration-line
+                    margin: 2rem 2px 1rem 2px
+                    width: 50px
+                    height: 3px
+                    background: rgba(255,255,255,0.75)
+                &:not(.reversed) .left, &.reversed .right
+                    width: 35%
+                    +media-breakpoint-down(lg)
+                        width: 50%
+            .item-name
+                font-size: 2rem
+                font-weight: bold
+                margin-bottom: 1rem
+            .item-img img
+                max-width: 100%
+        .more-features
+            padding-top: 4rem
+            h4
+                margin-bottom: 4rem
+            .features
+                display: flex
+                .left, .right
+                    width: 50%
+                    padding: 0 1rem
+                    font-size: 1.4rem
+                    font-weight: bold
+                    line-height: 2
+                .left
+                    text-align: right
+                .right
+                    text-align: left
+                +media-breakpoint-down(xs)
+                    width: 100%
+                    text-align: center !important
+        .bg-1
+            +text-img-bg('/images/text-bg-1.png')
+        .bg-2
+            +text-img-bg('/images/text-bg-2.png')
+        .bg-3
+            +text-img-bg('/images/text-bg-3.png')
+        .bg-4
+            +text-img-bg('/images/text-bg-4.png')
+        .bg-5
+            +text-img-bg('/images/text-bg-5.png')
+        .bg-6
+            +text-img-bg('/images/text-bg-6.png')
+        .bg-large-l
+            +text-img-bg('/images/text-bg-large-l.png')
+            background-position: right
+        .bg-large-r
+            +text-img-bg('/images/text-bg-large-r.png')
+            background-position: left
+    .highlight-link
+        display: inline-block
+        margin-top: 2rem
+        padding: 0.5rem 2.5rem
+        color: #000
+        font-weight: 500
+        letter-spacing: 0.05px
+        border-radius: 2.25rem
+        background: #fff
+        .comming-soon
+            font-size: 0.75rem
+            font-weight: normal
+            opacity: 0.5
+
+.highlight--playback
+    text-align: left
+    padding: 8rem 0
+    background: linear-gradient(154deg, #042A84 0%, #2C98A5 69%, #B9AE9B 100%)
+    color: $white
+    .container
+        position: relative
+    p
+        font-size: 1.2rem
+        margin: 3rem 25% 3rem 0
+        +media-breakpoint-down(sm)
+            margin-right: 15%
+        +media-breakpoint-down(xs)
+            margin-right: 0
+    .items
+        display: flex
+        text-align: center
+        color: $gray-700
+        .item
+            width: 160px
+            margin-right: 1rem
+            background: $white
+            border-radius: 6px
+            box-shadow: 0 0 6px rgba(0,0,0,.3)
+            padding: 1rem 1.2rem
+            font-size: 90%
+            .item-icon
+                color: $gray-800
+                padding: 0.5rem 0 1rem 0
+            .item-text
+                padding-top: 0.5rem
+                border-top: 1px solid $gray-300
+    a
+        &, &:hover, &:active
+            color: #fff
+
+.highlight--opensource
+    text-align: right
+    padding: 8rem 0
+    background: linear-gradient(140deg, #FFEFEF 0%, #FFC084 100%)
+    color: $gray-900
+    p
+        font-size: 1.2rem
+        margin: 3rem 0 3rem 25%
+        +media-breakpoint-down(sm)
+            margin-left: 15%
+        +media-breakpoint-down(xs)
+            margin-left: 0
+    .swift-bg
+        position: absolute
+        left: -10%
+        opacity: 0.5
+        top: 50%
+        transform: translateY(-50%)
+    .content
+        position: relative
+    .highlight-link
+        display: inline-block
+        margin: 2rem 0 0 0
+        padding: .75rem 1.5rem
+        color: $gray-900
+        border: 1px solid $gray-900
+        border-radius: 1.75rem

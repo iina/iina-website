@@ -1,0 +1,24 @@
+=font-family-system
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+=clear-float
+    &:before, &:after
+        display: table
+        content: ' '
+    &:after
+        clear: both
+
+=absolute($inset)
+    position: absolute
+    left: $inset
+    right: $inset
+    top: $inset
+    bottom: $inset
+
+=text-img-bg($img)
+    background: url($img) no-repeat
+    background-clip: text
+    background-position: left
+    text-fill-color: transparent
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent

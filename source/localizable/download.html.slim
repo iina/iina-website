@@ -1,0 +1,85 @@
+---
+title: Download | IINA - The modern media player for macOS
+html_class: download
+---
+
+section#downloads.downloads
+    .container
+        h2.mb-4 Downloads
+        - latest = data.versions.stable.first
+        - latest_beta = data.versions.beta.first
+        .dl-card
+            h5 Stable releases
+            .text-center.py-2
+                .text-muted.font-weight-bold.mb-2
+                    | Latest stable release
+                = link_to download_link(latest.version), class: 'btn btn-primary stable-btn' do
+                    = latest.version
+                .text-muted.small.mt-2
+                    | Released on&nbsp;
+                    = latest.date
+            hr.my-4
+            h6 Previous versions
+            ul.small.m-0.pl-4
+                - data.versions.stable.drop(1).each do |v|
+                    li
+                        = link_to v.version, download_link(v.version)
+                        span.release-date.ml-2.text-muted
+                            | released on&nbsp;
+                            = v.date
+        .dl-card
+            h5 Beta releases
+            p.text-muted
+                | If you already have IINA installed, you can change to beta channel by
+                  checking the "Receive beta updates" button in Preferences.
+            a href="#beta-downloads" data-toggle="collapse" Show downloads
+            #beta-downloads.collapse
+                .text-center.py-2
+                    .text-muted.font-weight-bold.mb-2
+                        | Latest beta release
+                    = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn' do
+                        = latest_beta.version
+                    .text-muted.small.mt-2
+                        | Released on&nbsp;
+                        = latest_beta.date
+                hr.my-4
+                h6 Previous versions
+                ul.small.m-0.pl-4
+                    - data.versions.beta.drop(1).each do |v|
+                        li
+                            = link_to v.version, download_link(v.version)
+                            span.release-date.ml-2.text-muted
+                                | released on&nbsp;
+                                = v.date
+    section#install-homebrew.mt-5
+        .container
+            h5 Install via Homebrew Cask
+            p.text-muted
+                | You may also install IINA via the community-maintained&nbsp;
+                = link_to 'Homebrew Cask', 'http://caskroom.io/'
+                | &nbsp;formula by running:
+            pre.bg-light.p-2.text-center
+                | brew cask install iina
+    section#browser-extension.mt-5
+        .container
+            h5 Browser extensions
+            p.text-muted
+                | You can open various online media in IINA directly from web browsers by using our browser extensions.
+            p.text-muted
+                | The Safari App Extension is already included in the IINA App bundle, and you may only need to enable it in Safari Preferences. Extensions for other browsers could be downloaded below.
+            .btn-group
+                = link_to 'https://chrome.google.com/webstore/detail/open-in-iina/pdnojahnhpgmdhjdhgphgdcecehkbhfo', class: 'btn btn-secondary' do
+                    .span.fab.fa-chrome
+                    | Chrome
+                = link_to 'https://addons.mozilla.org/addon/open-in-iina-x', class: 'btn btn-secondary' do
+                    .span.fab.fa-firefox
+                    | Firefox
+    section#nightly-builds.mt-5
+        .container
+            h5 Nightly builds
+            p.text-muted
+                | Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+            p.text-muted
+                | Click&nbsp;
+                = link_to 'here', '//nightly.iina.io'
+                | &nbsp;to view all nightly builds.

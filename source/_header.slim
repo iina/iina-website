@@ -1,0 +1,25 @@
+- nav_items = [[:home, '/'], [:features, '/features'], [:download, '/download'], [:github, 'https://github.com/iina/iina', 'github']]
+
+#header
+  nav.navbar.navbar-light.navbar-expand-sm
+    = link_to '/', class: 'navbar-brand' do
+      = image_tag "iina-icon-60.png", alt: "Home"
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+      span.fas.fa-bars
+
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+          /li.nav-item
+            = link_to localized_path('/'), class: 'nav-link' do
+              = t(:home)
+          /li.nav-item.mr-2
+            = link_to localized_path('/features'), class: 'nav-link' do
+              = t(:features)
+          li.nav-item
+            = link_to localized_path('/download'), class: 'nav-link stressed left' do
+              span class=("fas fa-cloud-download-alt")
+              = t(:downloads)
+          li.nav-item
+            = link_to 'https://github.com/iina/iina', class: 'nav-link stressed right' do
+              span class=("fab fa-github")
+              = t(:github)
