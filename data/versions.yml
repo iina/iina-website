@@ -1,4 +1,6 @@
 stable:
+  - version: 1.0.1
+    date: 2019-01-14
   - version: 1.0.0
     date: 2018-12-25
   - version: 0.0.15.1
