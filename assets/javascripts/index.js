@@ -13,6 +13,7 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faFileVideo } from "@fortawesome/free-solid-svg-icons/faFileVideo";
 import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons/faGlobeAmericas";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 
 library.add(
     faCloudDownloadAlt,
@@ -25,6 +26,7 @@ library.add(
     faEnvelope,
     faFileVideo,
     faGlobeAmericas,
+    faGlobe,
 );
 dom.watch();
 

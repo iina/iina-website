@@ -119,17 +119,27 @@ section.highlight.highlight--opensource
             = image_tag "swift.svg"
         .content
             h2 Free, open source, in active development.
-            markdown:
-                Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license.
-                Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
-            = link_to '#', id: 'mail-link', class: 'highlight-link mr-4' do
-                span.fas.fa-envelope
-                span.mr-2 Mail us
-            = link_to 'https://github.com/iina/iina', class: 'highlight-link' do
-                span.fab.fa-github
-                span.mr-2 GitHub repository
-                span.fa.fa-angle-right
-            javascript:
-                document.getElementById('mail-link').href = 'mail' + 'to:deve' + 'loper' + 's@ii' + 'na.io';
+            .row
+                .col-sm
+                    p
+                        |
+                            Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license.
+                            Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
+                    = link_to 'https://github.com/iina/iina', class: 'highlight-link' do
+                        span.fab.fa-github
+                        span.mr-2 GitHub repository
+                        span.fa.fa-angle-right
+                .col-sm
+                    p
+                        |
+                            IINA has been translated into more than 20 languages by translators from all over the world.
+                            You can improve the translation or add your new language freely via our translation platform
+                        small
+                            |  (powered by Crowdin)
+                        | .
+                    = link_to 'https://translate.iina.io', class: 'highlight-link', target: '_blank' do
+                        span.fas.fa-globe
+                        span.mr-2 Translation platform
+                        span.fa.fa-angle-right
 
 /== render '/_contribution.*'

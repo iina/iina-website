@@ -16,6 +16,10 @@
             = link_to localized_path('/features'), class: 'nav-link' do
               = t(:features)
           li.nav-item
+            = link_to 'https://translate.iina.io', class: 'nav-link', target: '_blank' do
+              span class=("fas fa-globe-americas")
+              = t(:translation)
+          li.nav-item
             = link_to localized_path('/download'), class: 'nav-link stressed left' do
               span class=("fas fa-cloud-download-alt")
               = t(:downloads)
