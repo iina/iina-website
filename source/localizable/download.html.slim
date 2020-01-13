@@ -18,7 +18,7 @@ section#downloads.downloads
                 .text-muted.small.mt-2
                     | Released on&nbsp;
                     = latest.date
-                    = link_to release_note_link(latest.version), class: 'release-note ml-2' do
+                    = link_to release_note_link(latest.version), class: 'release-note ml-2', target: '_blank' do
                         = t(:release_note)
                 .text-muted.small.mt-2
                     | SHA256:
@@ -33,7 +33,7 @@ section#downloads.downloads
                             | released on&nbsp;
                             = v.date
                         span ,
-                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
+                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
                             = t(:release_note)
         .dl-card
             h5 Beta releases
@@ -45,7 +45,7 @@ section#downloads.downloads
                 .text-center.py-2
                     .text-muted.font-weight-bold.mb-2
                         | Latest beta release
-                    = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn' do
+                    = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn', target: '_blank' do
                         = latest_beta.version
                     .text-muted.small.mt-2
                         | Released on&nbsp;
