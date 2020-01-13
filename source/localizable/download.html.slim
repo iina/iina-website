@@ -18,8 +18,10 @@ section#downloads.downloads
                 .text-muted.small.mt-2
                     | Released on&nbsp;
                     = latest.date
+                    = link_to release_note_link(latest.version), class: 'release-note ml-2' do
+                        = t(:release_note)
                 .text-muted.small.mt-2
-                    | SHA256: 
+                    | SHA256:
                     = latest.sha256
             hr.my-4
             h6 Previous versions
@@ -30,6 +32,9 @@ section#downloads.downloads
                         span.release-date.ml-2.text-muted
                             | released on&nbsp;
                             = v.date
+                        span ,
+                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
+                            = t(:release_note)
         .dl-card
             h5 Beta releases
             p.text-muted
@@ -46,7 +51,7 @@ section#downloads.downloads
                         | Released on&nbsp;
                         = latest_beta.date
                     .text-muted.small.mt-2
-                        | SHA256: 
+                        | SHA256:
                         = latest_beta.sha256
                 hr.my-4
                 h6 Previous versions
@@ -57,6 +62,8 @@ section#downloads.downloads
                             span.release-date.ml-2.text-muted
                                 | released on&nbsp;
                                 = v.date
+                            = link_to release_note_link(v.version), class: 'release-note ml-2' do
+                                = t(:release_note)
     section#install-homebrew.mt-5
         .container
             h5 Install via Homebrew Cask

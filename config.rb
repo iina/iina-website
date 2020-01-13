@@ -47,6 +47,10 @@ helpers do
   def download_link(version)
     "https://dl.iina.io/IINA.v#{version}.dmg"
   end
+
+  def release_note_link(version)
+    "/release-note/#{version}.html"
+  end
 end
 
 # Build-specific configuration
