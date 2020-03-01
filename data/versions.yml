@@ -36,6 +36,9 @@ stable:
     date: 2017-10-15
     sha256: 7f7886555227fff45b05d3a48ff31c4e70a1c778695f829e747ad4af35342668
 beta:
+  - version: 1.0.7-beta1
+    date: 2020-03-01
+    sha256: 53ff2ba27711e46c6e70c5b8cca9cdec2476db821eb39e18fb41dfd7be61d1ff
   - version: 1.0.0-rc
     date: 2018-12-02
     sha256: 40fb3442705e8ca1ab27c16e6dbdab9d41f926e4eeecb65c8f7829196b9cb863
