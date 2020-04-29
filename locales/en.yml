@@ -6,3 +6,17 @@ en:
   downloads: Downloads
   github: GitHub
   release_note: Release Note
+  headline_1: The
+  headline_2: modern
+  headline_3: media player for macOS.
+  download: Download
+  requirement: Requires OS X %{min_version}+, macOS %{version} recommended
+  download_beta: Download beta releases or nightly builds
+  macos_header: For and only for modern macOS.
+  macos_desc: IINA is born to be a modern macOS application, from its framework to the user interface. It adopts the post-Yosemite design language of macOS and keeps up the pace of new technologies like Force Touch, Touch Bar, and Picture-in-Picture.
+  macos_dark_mode: Dark Mode
+  macos_dark_mode_desc: IINA ships with a carefully crafted user interface for the macOS Mojave dark mode, which includes adjusted colors, icons and textures, providing a sleek and unified look.
+  macos_pip: Picture-in-Picture
+  macos_pip_desc: IINA supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without being distracted.
+  more_features: More Features
+  playback_header: Plays anything.

@@ -17,9 +17,11 @@ section.title
         h1.headline
             | IINA
         p.sub-headline
-            | The&nbsp;
-            span.modern modern
-            | &nbsp;media player for macOS.
+            = t(:headline_1)
+            | &nbsp;
+            span.modern = t(:headline_2)
+            | &nbsp;
+            = t(:headline_3)
         .download
             = link_to 'https://github.com/iina/iina', class: 'dl-btn github' do
                 span.fab.fa-github
@@ -29,37 +31,37 @@ section.title
             - latest = data.versions.stable.first.version
             = link_to download_link(latest), class: 'dl-btn dmg' do
                 span.fas.fa-cloud-download-alt
-                | &nbsp;Download
+                | &nbsp;
+                = t(:download)
                 span.light v#{latest}
         p.requirement
-            | Requires OS X 10.11+, macOS 10.15 recommended
+            = t(:requirement, min_version: '10.11', version: '10.15')
         p.other-downloads
-            = link_to 'Download beta releases or nightly builds', localized_path('/download')
+            = link_to t(:download_beta), localized_path('/download')
 
 section.highlight.highlight--macos
     .container
-        h2 For and only for modern macOS.
-        p
-            | IINA is born to be a modern macOS application, from its framework to the user interface. It adopts the post-Yosemite design language of macOS and keeps up the pace of new technologies like Force Touch, Touch Bar, and Picture-in-Picture.
+        h2 = t(:macos_header)
+        p = t(:macos_desc)
         .highlight-features
             .item.item--forcetouch
                 .left
                     .decoration-line
-                    .item-name.bg-1 Dark Mode
-                    .item-desc IINA ships with a carefully crafted user interface for the macOS Mojave dark mode, which includes adjusted colors, icons and textures, providing a sleek and unified look.
+                    .item-name.bg-1 = t(:macos_dark_mode)
+                    .item-desc = t(:macos_dark_mode_desc)
                 .right
                     .item-img
                         = image_tag "feature-1.png", width: 800
             .item.item--pip.reversed
                 .right
                     .decoration-line
-                    .item-name.bg-3 Picture-in-Picture
-                    .item-desc IINA supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without being distracted.
+                    .item-name.bg-3 = t(:macos_pip)
+                    .item-desc = t(:macos_pip_desc)
                 .left
                     .item-img
                         = image_tag "feature-2.png", width: 800
             .more-features
-                h4 More Features
+                h4 = t(:more_features)
                 .features
                     .left.bg-large-l
                         | Touch Bar
@@ -91,7 +93,7 @@ section.highlight.highlight--playback
                 path d="M-150,220 L-150,-220 L300,0 z" fill="#fff" fill-opacity=0.03
     .container
         .content
-            h2 Plays anything.
+            h2 = t(:playback_header)
             markdown:
                 Powered by the open source media player mpv, IINA can play almost every media file you have.
                 With the support of youtube-dl and our browser extensions, you can also play a variety of online streams in IINA via one click.
