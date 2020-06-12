@@ -5,81 +5,73 @@ html_class: download
 
 section#downloads.downloads
     .container
-        h2.mb-4 Downloads
+        h2.mb-4 = t(:downloads)
         - latest = data.versions.stable.first
         - latest_beta = data.versions.beta.first
         .dl-card
-            h5 Stable releases
+            h5 = t(:stable_releases)
             .text-center.py-2
                 .text-muted.font-weight-bold.mb-2
-                    | Latest stable release
+                    = t(:latest_stable_release)
                 = link_to download_link(latest.version), class: 'btn btn-primary stable-btn' do
                     = latest.version
                 .text-muted.small.mt-2
-                    | Released on&nbsp;
-                    = latest.date
+                    = t(:released_on, date: latest.date)
                     = link_to release_note_link(latest.version), class: 'release-note ml-2', target: '_blank' do
                         = t(:release_note)
                 .text-muted.small.mt-2
-                    | SHA256:
+                    | SHA256:&nbsp
                     = latest.sha256
             hr.my-4
-            h6 Previous versions
+            h6 = t(:previous_versions)
             ul.small.m-0.pl-4
                 - data.versions.stable.drop(1).each do |v|
                     li
                         = link_to v.version, download_link(v.version)
                         span.release-date.ml-2.text-muted
-                            | released on&nbsp;
-                            = v.date
+                            = t(:released_on_sub, date: v.date)
                         span ,
-                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
+                        = link_to release_note_link(v.version), class: 'release-note ml-2', target: '_blank' do
                             = t(:release_note)
         .dl-card
-            h5 Beta releases
-            p.text-muted
-                | If you already have IINA installed, you can change to beta channel by
-                  checking the "Receive beta updates" button in Preferences.
-            a href="#beta-downloads" data-toggle="collapse" Show downloads
+            h5 = t(:beta_releases)
+            p.text-muted = t(:beta_notice)
+            a href="#beta-downloads" data-toggle="collapse" = t(:show_downloads)
             #beta-downloads.collapse
                 .text-center.py-2
                     .text-muted.font-weight-bold.mb-2
-                        | Latest beta release
+                        = t(:latest_beta_release)
                     = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn', target: '_blank' do
                         = latest_beta.version
                     .text-muted.small.mt-2
-                        | Released on&nbsp;
-                        = latest_beta.date
+                        = t(:released_on, latest_beta.date)
                     .text-muted.small.mt-2
-                        | SHA256:
+                        | SHA256:&nbsp
                         = latest_beta.sha256
                 hr.my-4
-                h6 Previous versions
+                h6 = t(:previous_versions)
                 ul.small.m-0.pl-4
                     - data.versions.beta.drop(1).each do |v|
                         li
                             = link_to v.version, download_link(v.version)
                             span.release-date.ml-2.text-muted
-                                | released on&nbsp;
-                                = v.date
-                            = link_to release_note_link(v.version), class: 'release-note ml-2' do
+                                = t(:released_on_sub, date: v.date)
+                            = link_to release_note_link(v.version), class: 'release-note ml-2', target: '_blank' do
                                 = t(:release_note)
     section#install-homebrew.mt-5
         .container
-            h5 Install via Homebrew Cask
+            h5 = t(:brew_cask_title)
             p.text-muted
-                | You may also install IINA via the community-maintained&nbsp;
-                = link_to 'Homebrew', 'https://brew.sh/'
-                | &nbsp;cask by running:
+                = t(:brew_cask_desc, homebrew_link: link_to('Homebrew', 'https://brew.sh'))
             pre.bg-light.p-2.text-center
                 | brew cask install iina
     section#browser-extension.mt-5
         .container
-            h5 Browser extensions
+            h5 = t(:browser_extensions)
             p.text-muted
-                | You can open various online media in IINA directly from web browsers by using our browser extensions.
+                = t(:browser_extensions_desc1)
             p.text-muted
-                | The Safari App Extension is already included in the IINA App bundle, and you may only need to enable it in Safari Preferences. Extensions for other browsers could be downloaded below.
+                = t(:browser_extensions_desc2)
             .btn-group
                 = link_to 'https://chrome.google.com/webstore/detail/open-in-iina/pdnojahnhpgmdhjdhgphgdcecehkbhfo', class: 'btn btn-secondary' do
                     .span.fab.fa-chrome
@@ -89,10 +81,8 @@ section#downloads.downloads
                     | Firefox
     section#nightly-builds.mt-5
         .container
-            h5 Nightly builds
+            h5 = t(:nightly_builds)
             p.text-muted
-                | Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+                = t(:nightly_builds_desc)
             p.text-muted
-                | Click&nbsp;
-                = link_to 'here', '//nightly.iina.io'
-                | &nbsp;to view all nightly builds.
+                = t(:nightly_builds_goto, link: link_to(t(:here), '//nightly.iina.io'))
