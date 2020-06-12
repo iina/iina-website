@@ -64,24 +64,24 @@ section.highlight.highlight--macos
                 h4 = t(:more_features)
                 .features
                     .left.bg-large-l
-                        | Touch Bar
+                        = t(:touch_bar)
                         br
-                        | System Media Control
+                        = t(:system_media_control)
                         br
-                        | Customizable UI
+                        = t(:customizable_ui)
                         br
-                        | Online Subtitles
+                        = t(:online_subtitles)
                     .right.bg-large-r
-                        | Music Mode
+                        = t(:music_mode)
                         br
-                        | Mouse & Trackpad Gestures
+                        = t(:mouse_trackpad_gestures)
                         br
-                        | Thumbnail Preview
+                        = t(:thumbnail_preview)
                         br
-                        | Plugin System
+                        = t(:plugin_system)
                 = link_to'#', class: 'highlight-link' do
-                    div Screenshots
-                    .comming-soon Coming soon
+                    div = t(:screenshots)
+                    .coming-soon = t(:comming_soon)
 
 section.highlight.highlight--playback
     .background
@@ -94,25 +94,23 @@ section.highlight.highlight--playback
     .container
         .content
             h2 = t(:playback_header)
-            markdown:
-                Powered by the open source media player mpv, IINA can play almost every media file you have.
-                With the support of youtube-dl and our browser extensions, you can also play a variety of online streams in IINA via one click.
+            p = t(:playback_desc)
         .items.mb-4
             .item
                 .item-icon
                     span.fas.fa-file-video.fa-2x.m-0
-                .item-text Local files
+                .item-text = t(:local_files)
             .item
                 .item-icon
                     span.fas.fa-globe-americas.fa-2x.m-0
-                .item-text Online streams
+                .item-text = t(:online_streams)
             .item
                 .item-icon
                     span.fab.fa-youtube.fa-2x.m-0
-                .item-text YouTube playlists
+                .item-text = t(:youtube_playlists)
         .content
             = link_to localized_path('/download#browser-extensions') do
-                | Download browser extensions
+                = t(:download_extensions)
                 span.fas.fa-angle-right.ml-2
 
 section.highlight.highlight--opensource
@@ -120,28 +118,22 @@ section.highlight.highlight--opensource
         .swift-bg
             = image_tag "swift.svg"
         .content
-            h2 Free, open source, in active development.
+            h2 = t(:open_source_header)
             .row
                 .col-sm
-                    p
-                        |
-                            Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license.
-                            Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
+                    p = t(:open_source_desc)
                     = link_to 'https://github.com/iina/iina', class: 'highlight-link' do
                         span.fab.fa-github
-                        span.mr-2 GitHub repository
+                        span.mr-2 = t(:github_repo)
                         span.fa.fa-angle-right
                 .col-sm
                     p
-                        |
-                            IINA has been translated into more than 20 languages by translators from all over the world.
-                            You can improve the translation or add your new language freely via our translation platform
-                        small
-                            |  (powered by Crowdin)
-                        | .
+                        = t(:translation_desc)
+                        small = t(:powered_by_crowdin)
+                        = t(:period)
                     = link_to 'https://translate.iina.io', class: 'highlight-link', target: '_blank' do
                         span.fas.fa-globe
-                        span.mr-2 Translation platform
+                        span.mr-2 = t(:translation_platform)
                         span.fa.fa-angle-right
 
 /== render '/_contribution.*'
