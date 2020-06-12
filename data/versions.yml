@@ -1,4 +1,7 @@
 stable:
+  - version: 1.0.7
+    date: 2020-06-12
+    sha256: 1b1938b3a9640b4c26960aefab1ebe077bfaaf4b7a62ccfce5a7e138c9c56d75
   - version: 1.0.6
     date: 2020-01-13
     sha256: 51cce921ef52f00df9b474e230f33d5a947c5b6e4d33aac4213a0e07b4b4a246
