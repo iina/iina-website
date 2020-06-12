@@ -6,7 +6,7 @@ html_class: features
 section.nav
     .container
         .nav-container
-            h2 Features
+            h2 = t(:features)
 
 section.features
     .container
@@ -15,21 +15,21 @@ section.features
                 .feature-content
                     .feature-img
                         = image_tag 'feature-sidebar.png', alt: 'Sidebar'
-                    h4 Access all you need from the sidebar.
-                    p All settings and options are available in the sidebar so you can adjust them in an intuitive way.
+                    h4 = t(:sidebar_title)
+                    p = t(:sidebar_desc)
             .feature-block.half
                 .feature-content
                     .feature-img
                         = image_tag 'feature-control.png', alt: 'Control'
-                    h4 Make full use of your mouse and trackpad.
-                    p IINA allows you to assign actions for mouse scrolling and click events, trackpad gestures or even Force Touch clicks.
+                    h4 = t(:control_title)
+                    p = t(:control_desc)
             .feature-block.full
                 .feature-content
-                    h4 Highly customizable user interface.
-                    p IINA provides 2 themes that match the system and 3 different layouts for the control bar.
+                    h4 = t(:ui_title)
+                    p = t(:ui_desc)
                     .segment-control.toggle-dark
-                        .segment.active data-choice="light" Light + Top
-                        .segment data-choice="dark" Dark + Floating
+                        .segment.active data-choice="light" = t(:light_and_top)
+                        .segment data-choice="dark" = t(:dark_and_floating)
                     .content.light
                         .feature-img
                             = image_tag 'feature-light.png', alt: 'Light + Top'
@@ -40,31 +40,31 @@ section.features
                 .feature-content
                     .feature-img
                         = image_tag 'feature-touchbar.png', alt: 'Touch Bar'
-                    h4 Touch Bar support.
-                    p Advanced Touch Bar support including a QuickTime-like seek preview.
+                    h4 = t(:touchbar_title)
+                    p = t(:touchbar_desc)
             .feature-block.half
                 .feature-content
                     .feature-img
                         = image_tag 'feature-pip.png', alt: 'Picture-in-Picture'
-                    h4 Picture-in-Picture.
-                    p IINA integrates the native Picture-in-Picture mode of macOS.
+                    h4 = t(:pip_title)
+                    p = t(:pip_desc)
             .feature-block.half
                 .feature-content
                     .feature-img
                         = image_tag 'feature-thumbnail.png', alt: 'Thumbnail preview'
-                    h4 Thumbnail preview.
-                    p IINA generates thumbnail for the whole timeline. You can preview at any time point just like YouTube.
+                    h4 = t(:thumbnail_title)
+                    p = t(:thumbnail_desc)
             .feature-block.half
                 .feature-content
                     .feature-img
                         = image_tag 'feature-crop.png', alt: 'Interactive Crop'
-                    h4 Interactive cropping and selection.
-                    p The interactive mode makes it easy to select an arbitrary region on the video. You can crop the selected region afterward, or apply a delogo filter to hide watermarks or hard-coded subtitles.
+                    h4 = t(:interactive_title)
+                    p = t(:interactive_desc)
             .feature-block.full
                 .feature-content.mmode
-                    h4 Music mode.
-                    p Though IINA is developed to be a video player, it also features a graceful music mode, allowing you to concentrate on music with additional information such as album artworks and artist names around. You can hide the album artwork and the playlist panel to obtain a minimal UI, or with all of them expanded to make it a fully functional music player.
+                    h4 = t(:music_mode_title)
+                    p = t(:music_mode_desc)
             .feature-block.half
                 .feature-content
-                    h4 Superme decoding capability.
-                    p Powered by mpv, IINA delivers the best decoding performance on macOS.
+                    h4 = t(:encoding_title)
+                    p = t(:encoding_desc)

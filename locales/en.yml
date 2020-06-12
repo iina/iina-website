@@ -59,5 +59,24 @@ en:
   nightly_builds_desc: Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
   nightly_builds_goto: Click %{link} to view all nightly builds.
   here: here
-
+  sidebar_title: Access all you need from the sidebar.
+  sidebar_desc: All settings and options are available in the sidebar so you can adjust them in an intuitive way.
+  control_title: Make full use of your mouse and trackpad.
+  control_desc: IINA allows you to assign actions for mouse scrolling and click events, trackpad gestures or even Force Touch clicks.
+  ui_title: Highly customizable user interface.
+  ui_desc: IINA provides 2 themes that match the system and 3 different layouts for the control bar.
+  light_and_top: Light + Top
+  dark_and_floating: Dark + Floating
+  touchbar_title: Touch Bar support.
+  touchbar_desc: Advanced Touch Bar support including a QuickTime-like seek preview.
+  pip_title: Picture-in-Picture.
+  pip_desc: IINA integrates the native Picture-in-Picture mode of macOS.
+  thumbnail_title: Thumbnail preview.
+  thumbnail_desc: IINA generates thumbnail for the whole timeline. You can preview at any time point just like YouTube.
+  interactive_title: Interactive cropping and selection.
+  interactive_desc: The interactive mode makes it easy to select an arbitrary region on the video. You can crop the selected region afterward, or apply a delogo filter to hide watermarks or hard-coded subtitles.
+  music_mode_title: Music mode.
+  music_mode_desc: Though IINA is developed to be a video player, it also features a graceful music mode, allowing you to concentrate on music with additional information such as album artworks and artist names around. You can hide the album artwork and the playlist panel to obtain a minimal UI, or with all of them expanded to make it a fully functional music player.
+  encoding_title: Superme decoding capability.
+  encoding_desc: Powered by mpv, IINA delivers the best decoding performance on macOS.
 
