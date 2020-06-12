@@ -127,10 +127,7 @@ section.highlight.highlight--opensource
                         span.mr-2 = t(:github_repo)
                         span.fa.fa-angle-right
                 .col-sm
-                    p
-                        = t(:translation_desc)
-                        small = t(:powered_by_crowdin)
-                        = t(:period)
+                    p = t(:translation_desc, crowdin: "<small>#{t(:powered_by_crowdin)}</small>")
                     = link_to 'https://translate.iina.io', class: 'highlight-link', target: '_blank' do
                         span.fas.fa-globe
                         span.mr-2 = t(:translation_platform)

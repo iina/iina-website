@@ -38,8 +38,26 @@ en:
   open_source_header: Free, open source, in active development.
   open_source_desc: Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license. Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
   github_repo: GitHub repository
-  translation_desc: IINA has been translated into more than 20 languages by translators from all over the world. You can improve the translation or add your new language freely via our translation platform
+  translation_desc: IINA has been translated into more than 20 languages by translators from all over the world. You can improve the translation or add your new language freely via our translation platform %{crowdin}.
   powered_by_crowdin: (powered by Crowdin)
-  period: .
   translation_platform: Translation platform
+  stable_releases: Stable releases
+  latest_stable_release: Latest stable release
+  released_on: Released on %{date}
+  previous_versions: Previous versions
+  released_on_sub: released on %{date}
+  beta_releases: Beta releases
+  beta_notice: If you already have IINA installed, you can change to beta channel by checking the "Receive beta updates" button in Preferences.
+  show_downloads: Show downlaods
+  latest_beta_release: Latest beta release
+  brew_cask_title: Install via Homebrew Cask
+  brew_cask_desc: "You may also install IINA via the community-maintained %{homebrew_link} cask by running:"
+  browser_extensions: Browser extensions
+  browser_extensions_desc1: You can open various online media in IINA directly from web browsers by using our browser extensions.
+  browser_extensions_desc2: The Safari App Extension is already included in the IINA App bundle, and you may only need to enable it in Safari Preferences. Extensions for other browsers could be downloaded below.
+  nightly_builds: Nightly builds
+  nightly_builds_desc: Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+  nightly_builds_goto: Click %{link} to view all nightly builds.
+  here: here
+
 
