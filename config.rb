@@ -45,7 +45,7 @@ helpers do
   end
 
   def download_link(version)
-    "https://dl.iina.io/IINA.v#{version}.dmg"
+    "https://dl-portal.iina.io/IINA.v#{version}.dmg"
   end
 
   def release_note_link(version)
