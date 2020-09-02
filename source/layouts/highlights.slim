@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /
+        meta charset="utf-8" /
+        meta content="ie=edge" http-equiv="x-ua-compatible" /
+        meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /
+        title = current_page.data.title || "IINA"
+        = stylesheet_link_tag "highlights"
+        / assets
+    body class=(current_page.data.html_class)
+        #main
+            = yield

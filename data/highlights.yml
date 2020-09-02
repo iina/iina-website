@@ -1,0 +1,19 @@
+v1.1.0:
+  - title: New Icons
+    desc: We have updated the icons in the on-screen controller to provide a better user experience and match the upcoming macOS release.
+    image: icons.png
+  - title: Precise Time Display
+    desc: Choose your desired time precision by right-clicking the time or duration label.
+    image: time.png
+  - title: Screenshot Previews
+    desc: After taking a screenshot, now IINA will show you a preview with some quick actions.
+    image: sc.png
+    image_pos: bottom
+    image_width: 885
+  - title: Music Artists/Titles in the Playlist
+    desc: Now IINA will show metadata for music files in the playlist. You can configure this option in Preferences > General > Playlist.
+    image: pl.png
+    image_pos: bottom
+    image_width: 412
+  - title: Force Dedicated GPU
+    desc: This new option under Preferences > Video/Audio allows always using dedicated GPU for rendering to deliver better performance.

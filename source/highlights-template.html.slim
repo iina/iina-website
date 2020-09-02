@@ -1,0 +1,25 @@
+---
+layout: highlights
+---
+
+.deco
+.page
+  h1 = t(:highlights_title, version: version)
+  .highlights-container
+    - items = data.highlights["v#{version}"]
+    - items.each_with_index do |h, i|
+      - img_class = h[:image] ? (h[:image_pos] || 'right') : 'none'
+      .highlight-item class="image-#{img_class}"
+        .content
+          h4
+            span = h[:title]
+          p = h[:desc]
+        - if h[:image]
+          .image
+            .image-container style="width:#{h[:image_width]}px"
+              = image_tag "#{version}/#{h[:image]}"
+      - unless items.length == i + 1
+        .separator
+  .highlights-more
+    = link_to release_note_link(version), class: 'release-note-link', target: '_blank' do
+      | Full release notes >

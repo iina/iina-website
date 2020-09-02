@@ -22,13 +22,15 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   },
-# )
+
+locales = %i(zh-Hans)
+data.highlights.each_key do |v|
+  ver = v[1..]
+  proxy "/highlights/#{ver}/index.html", "/highlights-template.html", locals: { version: ver }, locale: :en, ignore: true
+  locales.each do |lang|
+    proxy "/#{lang}/highlights/#{ver}/index.html", "/highlights-template.html", locals: { version: ver }, locale: lang, ignore: true
+  end
+end
 
 # Helpers
 # Methods defined in the helpers block are available in templates

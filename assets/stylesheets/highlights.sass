@@ -1,0 +1,114 @@
+$main: #276ad8
+$main-light: #45a2ff
+
+@import "utils"
+
+\:root
+    color-scheme: light dark
+    --bg-color: #fff
+    --sub-title-color: rgba(0, 0, 0, .85)
+    --sub-title-underline-color: #{transparentize($main, 0.6)}
+    --text-color: rgba(0, 0, 0, .6)
+    --separator-color: rgba(0, 0, 0,.1)
+    --main-color: #{$main}
+    --title-bg: url('/images/title-bg.jpeg')
+    --item-bg: rgba(0, 0, 0, .04)
+
+@media (prefers-color-scheme: dark)
+    \:root
+        --bg-color: #1e1e1e
+        --sub-title-color: rgba(255, 255, 255,.9)
+        --sub-title-underline-color: #{transparentize($main-light, 0.4)}
+        --text-color: rgba(255, 255, 255, .7)
+        --separator-color: rgba(255, 255, 255, .1)
+        --main-color: #{$main-light}
+        --title-bg: url('/images/title-bg-light.jpeg')
+        --item-bg: rgba(255, 255, 255, .03)
+
+html
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif
+    background: var(--bg-color)
+
+html[lang=zh-Hans]
+    font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif
+
+body
+    font-size: 13px
+    line-height: 1.4
+    margin: 0
+    padding: 0
+    background: var(--bg-color)
+
+#main
+    padding: 0 48px
+
+.page
+    padding: 24px 0
+
+h1
+    font-size: 32px
+    margin: 12px 0
+    +text-img-bg("/images/title-bg-light.jpeg")
+    background-image: var(--title-bg)
+
+.deco
+    width: 100px
+    height: 8px
+    background: linear-gradient(45deg, $main, #7457e8)
+
+.highlights-container
+    padding: 32px 0
+
+    .highlight-item
+        padding: 16px 24px
+        background: var(--item-bg)
+        border-radius: 8px;
+
+        &.image-right
+            display: flex
+            align-items: top
+            .image
+                padding-left: 16px
+                .image-container
+                    width: 200px
+                    height: 120px
+                    border-radius: 6px
+                    border: 2px solid var(--main-color)
+                    box-shadow: 0 0 1px #000
+                    overflow: hidden
+                    img
+                        max-height: 100%
+        &.image-bottom
+            .image
+                padding-top: 16px
+                .image-container
+                    max-width: 80%
+                    margin: 0 auto
+                    img
+                        max-width: 100%
+                        max-height: 400px
+        .content
+            width: 100%
+            flex: 1 1
+            h4
+                color: var(--sub-title-color)
+                font-size: 20px
+                margin: 0 0 12px 0
+                span
+                    display: inline-block
+                    border-bottom: 2px solid var(--sub-title-underline-color)
+            p
+                font-size: 16px
+                margin: 0
+                color: var(--text-color)
+    .separator
+        width: 120px
+        border-bottom: 1px solid var(--separator-color)
+        margin: 24px auto
+
+.highlights-more
+    .release-note-link
+        padding-left: 4px
+        font-size: 16px
+        color: var(--main-color)
+        text-decoration: none

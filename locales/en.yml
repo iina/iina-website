@@ -20,3 +20,4 @@ en:
   macos_pip_desc: IINA supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without being distracted.
   more_features: More Features
   playback_header: Plays anything.
+  highlights_title: Highlights in IINA v%{version}
