@@ -2,7 +2,7 @@
 
 The source code of IINA's new website at iina.io.
 
-## How to build
+## How to build :
 
 This site is powered by the static site generator [middleman](https://middlemanapp.com).
 To set up a local development environment,
