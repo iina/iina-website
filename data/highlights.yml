@@ -17,3 +17,6 @@ v1.1.0:
     image_width: 412
   - title: Force Dedicated GPU
     desc: This new option under Preferences > Video/Audio allows always using dedicated GPU for rendering to deliver better performance.
+v1.2.0:
+  - title: Native Build for M1 Macs
+    desc: Now IINA is shipped with a universal binary that run natively on both Intel and M1-based Macs.
