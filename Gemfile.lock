@@ -18,7 +18,11 @@ GEM
     concurrent-ruby (1.1.6)
     contracts (0.13.0)
     dotenv (2.7.5)
+    em-websocket (0.5.2)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.2.7)
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.1.7)
@@ -29,6 +33,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.6.0)
+    http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     kramdown (1.17.0)
@@ -70,6 +75,10 @@ GEM
       servolux
       tilt (~> 2.0.9)
       uglifier (~> 3.0)
+    middleman-livereload (3.4.7)
+      em-websocket (~> 0.5.1)
+      middleman-core (>= 3.3)
+      rack-livereload (~> 0.3.15)
     minitest (5.14.0)
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
@@ -80,6 +89,8 @@ GEM
     parallel (1.19.1)
     public_suffix (4.0.4)
     rack (2.2.2)
+    rack-livereload (0.3.17)
+      rack
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -104,9 +115,10 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.3)
   middleman-autoprefixer (~> 2.7)
+  middleman-livereload (~> 3.4.3)
   slim
   tzinfo-data
   wdm (~> 0.1)
 
 BUNDLED WITH
-   2.1.4
+   2.2.16
