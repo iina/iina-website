@@ -23,13 +23,13 @@ section.title
             | &nbsp;
             = t(:headline_3)
         .download
-            = link_to 'https://github.com/iina/iina', class: 'dl-btn github' do
+            = link_to 'https://github.com/iina/iina', title: 'iina github', class: 'dl-btn github' do
                 span.fab.fa-github
                 | &nbsp;GitHub
                 span.light GPLv3
             / br
             - latest = data.versions.stable.first.version
-            = link_to download_link(latest), class: 'dl-btn dmg' do
+            = link_to download_link(latest), title: 'iina download', class: 'dl-btn dmg' do
                 span.fas.fa-cloud-download-alt
                 | &nbsp;
                 = t(:download)
@@ -61,7 +61,7 @@ section.highlight.highlight--macos
                     .item-img
                         = image_tag "feature-2.png", width: 800
             .more-features
-                h4 = t(:more_features)
+                h3 = t(:more_features)
                 .features
                     .left.bg-large-l
                         | Touch Bar
@@ -111,7 +111,7 @@ section.highlight.highlight--playback
                     span.fab.fa-youtube.fa-2x.m-0
                 .item-text YouTube playlists
         .content
-            = link_to localized_path('/download#browser-extensions') do
+            = link_to localized_path('/download#browser-extensions'), title: 'iina extension' do
                 | Download browser extensions
                 span.fas.fa-angle-right.ml-2
 
@@ -127,7 +127,7 @@ section.highlight.highlight--opensource
                         |
                             Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license.
                             Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
-                    = link_to 'https://github.com/iina/iina', class: 'highlight-link' do
+                    = link_to 'https://github.com/iina/iina', title: 'iina github', class: 'highlight-link' do
                         span.fab.fa-github
                         span.mr-2 GitHub repository
                         span.fa.fa-angle-right
@@ -139,7 +139,7 @@ section.highlight.highlight--opensource
                         small
                             |  (powered by Crowdin)
                         | .
-                    = link_to 'https://translate.iina.io', class: 'highlight-link', target: '_blank' do
+                    = link_to 'https://translate.iina.io', title: 'iina translation', class: 'highlight-link', target: '_blank' do
                         span.fas.fa-globe
                         span.mr-2 Translation platform
                         span.fa.fa-angle-right

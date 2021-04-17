@@ -13,12 +13,12 @@ section#downloads.downloads
             .text-center.py-2
                 .text-muted.font-weight-bold.mb-2
                     | Latest stable release
-                = link_to download_link(latest.version), class: 'btn btn-primary stable-btn' do
+                = link_to download_link(latest.version), title: 'iina download latest version', class: 'btn btn-primary stable-btn' do
                     = latest.version
                 .text-muted.small.mt-2
                     | Released on&nbsp;
                     = latest.date
-                    = link_to release_note_link(latest.version), class: 'release-note ml-2', target: '_blank' do
+                    = link_to release_note_link(latest.version), title: 'iina release note', class: 'release-note ml-2', target: '_blank' do
                         = t(:release_note)
                 .text-muted.small.mt-2
                     | SHA256:
@@ -28,12 +28,12 @@ section#downloads.downloads
             ul.small.m-0.pl-4
                 - data.versions.stable.drop(1).each do |v|
                     li
-                        = link_to v.version, download_link(v.version)
+                        = link_to v.version, download_link(v.version), title: 'iina '+v.version
                         span.release-date.ml-2.text-muted
                             | released on&nbsp;
                             = v.date
                         span ,
-                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
+                        = link_to release_note_link(v.version), title: 'iina '+v.version+' release note', class: 'release-note ml-2 text-muted', target: '_blank' do
                             = t(:release_note)
         .dl-card
             h5 Beta releases
@@ -45,7 +45,7 @@ section#downloads.downloads
                 .text-center.py-2
                     .text-muted.font-weight-bold.mb-2
                         | Latest beta release
-                    = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn', target: '_blank' do
+                    = link_to download_link(latest_beta.version), title: 'show downloads', class: 'btn btn-secondary beta-btn', target: '_blank' do
                         = latest_beta.version
                     .text-muted.small.mt-2
                         | Released on&nbsp;
@@ -58,18 +58,18 @@ section#downloads.downloads
                 ul.small.m-0.pl-4
                     - data.versions.beta.drop(1).each do |v|
                         li
-                            = link_to v.version, download_link(v.version)
+                            = link_to v.version, download_link(v.version), title: 'iina '+v.version
                             span.release-date.ml-2.text-muted
                                 | released on&nbsp;
                                 = v.date
-                            = link_to release_note_link(v.version), class: 'release-note ml-2' do
+                            = link_to release_note_link(v.version), title: 'iina '+v.version+' release note' , class: 'release-note ml-2' do
                                 = t(:release_note)
     section#install-homebrew.mt-5
         .container
             h5 Install via Homebrew Cask
             p.text-muted
                 | You may also install IINA via the community-maintained&nbsp;
-                = link_to 'Homebrew', 'https://brew.sh/'
+                = link_to 'Homebrew', 'https://brew.sh/', title: 'homebrew'
                 | &nbsp;cask by running:
             pre.bg-light.p-2.text-center
                 | brew install --cask iina
@@ -81,10 +81,10 @@ section#downloads.downloads
             p.text-muted
                 | The Safari App Extension is already included in the IINA App bundle, and you may only need to enable it in Safari Preferences. Extensions for other browsers could be downloaded below.
             .btn-group
-                = link_to 'https://chrome.google.com/webstore/detail/open-in-iina/pdnojahnhpgmdhjdhgphgdcecehkbhfo', class: 'btn btn-secondary' do
+                = link_to 'https://chrome.google.com/webstore/detail/open-in-iina/pdnojahnhpgmdhjdhgphgdcecehkbhfo', title: 'iina chrome extension', class: 'btn btn-secondary' do
                     .span.fab.fa-chrome
                     | Chrome
-                = link_to 'https://addons.mozilla.org/addon/open-in-iina-x', class: 'btn btn-secondary' do
+                = link_to 'https://addons.mozilla.org/addon/open-in-iina-x', title: 'iina firefox extension', class: 'btn btn-secondary' do
                     .span.fab.fa-firefox
                     | Firefox
     section#nightly-builds.mt-5
@@ -94,5 +94,5 @@ section#downloads.downloads
                 | Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
             p.text-muted
                 | Click&nbsp;
-                = link_to 'here', '//nightly.iina.io'
+                = link_to 'here', '//nightly.iina.io', title: 'iina nightly builds'
                 | &nbsp;to view all nightly builds.
