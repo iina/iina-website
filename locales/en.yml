@@ -10,7 +10,7 @@ en:
   headline_2: modern
   headline_3: media player for macOS.
   download: Download
-  requirement: Requires OS X %{min_version}+, macOS %{version} recommended
+  requirement: Requires OS X %{min_version}+, the latest macOS recommended
   download_beta: Download beta releases or nightly builds
   macos_header: For and only for modern macOS.
   macos_desc: IINA is born to be a modern macOS application, from its framework to the user interface. It adopts the post-Yosemite design language of macOS and keeps up the pace of new technologies like Force Touch, Touch Bar, and Picture-in-Picture.

@@ -20,3 +20,16 @@ v1.1.0:
 v1.2.0:
   - title: Native Build for M1 Macs
     desc: Now IINA is shipped with a universal binary that run natively on both Intel and M1-based Macs.
+v1.3.0:
+  - title: Built for the Latest OS and Hardware
+    desc: Thanks to all the contributors in the past year, we were able to fix most crashes and major bugs in the previous version. IINA 1.3.0 added support for macOS Monterey and the new MacBooks. Please read the full release note for a complete list of fixed issues.
+    image: macos2.png
+    image_pos: bottom
+    image_width: 200
+  - title: HDR and EDR Support
+    desc: You can now enjoy HDR videos on compatible displays. Switch HDR on/off conveniently in the sidebar.
+    image: hdr.png
+    image_pos: bottom
+    image_width: 400
+  - title: Broken features are working now
+    desc: IINA 1.3.0 is a fresh build restoring all broken features, including legacy full screen and YouTube videos.

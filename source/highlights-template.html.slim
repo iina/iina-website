@@ -4,7 +4,7 @@ layout: highlights
 
 .deco
 .page
-  h1 = t(:highlights_title, version: version)
+  h1 = I18n.t(:highlights_title, version: version)
   .highlights-container
     - items = data.highlights["v#{version}"]
     - items.each_with_index do |h, i|
