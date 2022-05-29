@@ -8,7 +8,7 @@ const cssLoaders = [
     loader: MiniCssExtractPlugin.loader,
   },
   {
-    loader: "css-loader", // translates CSS into CommonJS modules
+    loader: "css-loader?url=false", // translates CSS into CommonJS modules
   },
   {
     loader: "postcss-loader", // Run post css actions

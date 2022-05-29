@@ -12,6 +12,13 @@ html
         = javascript_include_tag "site"
     body class=(current_page.data.html_class)
         = partial "header"
-        #main
-            = yield
-            = partial "footer"
+        - if plugin_doc?
+            #main
+                #doc-index
+                    = partial 'plugin/documentation/plugin-doc-index'
+                #doc-body
+                    = yield
+        - else
+            #main
+                = yield
+                = partial "footer"

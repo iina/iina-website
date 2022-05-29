@@ -1,6 +1,26 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+require 'rouge'
+require 'rouge/plugins/redcarpet'
+
+class HTMLWithHighlight < Redcarpet::Render::HTML
+  include Rouge::Plugins::Redcarpet
+end
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true, :underline => true, :hard_wrap => true, highlight: true
+md_opts = {
+  renderer: HTMLWithHighlight.new,
+  :fenced_code_blocks => true,
+  :smartypants => true,
+  :underline => true,
+  :hard_wrap => true,
+  highlight: true
+}
+Slim::Embedded.options[:markdown] = md_opts
+ALT_MD_RENDERER = Redcarpet::Markdown.new(HTMLWithHighlight, md_opts)
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -52,6 +72,36 @@ helpers do
 
   def release_note_link(version)
     "/release-note/#{version}.html"
+  end
+
+  def plugin_doc?
+    current_page.url.start_with? '/plugin/documentation/'
+  end
+
+  def doc_api_title(api)
+    params = if api.params.nil?
+      ''
+    else
+      api.params.keys.join(', ')
+    end
+    if (api.type || 'method') == 'method'
+      "#{api.name}(#{params})"
+    else
+      api.name
+    end
+  end
+
+  def doc_api_type(api)
+    t = api.type || 'method'
+    {
+      'method' => 'Method',
+      'prop' => 'Property',
+      'readonly' => 'Readonly Property',
+    }[t]
+  end
+
+  def render_markdown(str)
+    ALT_MD_RENDERER.render(str).html_safe
   end
 end
 

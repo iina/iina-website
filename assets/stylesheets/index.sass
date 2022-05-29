@@ -10,10 +10,23 @@ html
     +media-breakpoint-down(xs)
         font-size: 13px
 
-#main
-    @import "index"
-    @import "features"
-    @import "download"
+body.index
+    #main
+        @import "_index"
+body.features
+    #main
+        @import "_features"
+body.download
+    #main
+        @import "_download"
+body.plugin
+    #main
+        @import "_plugin"
+body.plugin-doc
+    #main
+        display: flex
+        width: 100%
+        @import "_plugin-doc"
 
 .svg-inline--fa
     margin-right: 0.5rem
