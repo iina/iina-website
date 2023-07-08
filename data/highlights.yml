@@ -46,3 +46,24 @@ v1.3.1:
       Maintaining a free and open-source software costs us time and money.
       If you like IINA and would like to support us financially, please consider sponsoring us on GitHub.
       More ways to donate will be added in the future.
+v1.3.2:
+  - title: Better HDR and Hardware Acceleration
+    desc: IINA 1.3.2 also includes important fixes to bugs and crashes to make IINA more stable.
+  - title: New File Icons and Log Viewer
+    desc: IINA 1.3.2 includes new file icons for all supported file types.
+      The new Log Viewer allows you to easily view and share logs, which is useful for troubleshooting,
+      and provides a debugging tool for the upcoming plugin system.
+  - more: <b>The Plugin System</b><br>
+      We have been working on a plugin system for IINA for over a year.
+      The plugin system will bring infinite possibilities to IINA, allowing you to extend IINA with new features
+      such as live comments, synchronized playback, online service integration, and more.
+      We will release a beta version of the plugin system soon.
+  - more: <b>Deprecation Notice</b><br>
+      IINA 1.3.2 only supports macOS 10.13 and above. We will release a separate version for macOS 10.11-10.12
+      soon. Depending on our development progress, IINA 1.3.2 may be the last version to support macOS
+      10.11 and 10.12.
+  - more: <b>GitHub Sponsors</b><br>
+      We are testing the <a href="https://github.com/sponsors/iina">GitHub Sponsors</a> program.
+      Maintaining a free and open-source software costs us time and money.
+      If you like IINA and would like to support us financially, please consider sponsoring us on GitHub.
+      More ways to donate will be added in the future.
