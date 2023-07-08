@@ -109,8 +109,32 @@ h1
         margin: 24px auto
 
 .highlights-more
+    input#expand
+        display: none
+
     .release-note-link
         padding-left: 4px
         font-size: 16px
         color: var(--main-color)
         text-decoration: none
+        cursor: pointer
+        &:hover
+            text-decoration: underline
+
+    .release-note-container
+        width: 100%
+        margin-top: 16px
+        max-height: 0
+        overflow: hidden
+        transition: max-height .25s ease-in-out
+        background: var(--bg-color)
+        border-radius: 8px
+        border: 1px solid rgba(255, 255, 255, .2)
+        iframe
+            width: 100%
+            width: calc(100% - 32px)
+            border: 0
+            padding: 16px
+
+    #expand:checked + .release-note-link + .release-note-container
+        max-height: 1000vh

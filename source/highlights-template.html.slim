@@ -26,3 +26,34 @@ layout: highlights
   .highlights-more
     = link_to release_note_link(version), class: 'release-note-link', target: '_blank' do
       | Full release notes >
+
+/     input#expand type="checkbox"
+/     label.release-note-link for="expand"
+/       | Full release notes
+/     .release-note-container
+/       iframe.rn-frame src=(release_note_link(version)) frameborder="0" 
+
+/ javascript:
+/   function fit() {
+/     var ifrm = document.querySelectorAll("iframe.rn-frame")[0]
+/     if (!ifrm) {
+/       requestAnimationFrame(fit)
+/       return;
+/     }
+/     var win = ifrm.contentWindow
+/     var doc = win.document
+/     var html = doc.documentElement
+/     var body = doc.body
+
+/     if(body) {
+/       body.style.overflowY = "hidden"
+/     }
+/     if(html) {
+/       html.style.overflowY = "hidden"
+/       var style = win.getComputedStyle(html)
+/       ifrm.height = ifrm.parentNode.style.height = parseInt(style.getPropertyValue("height"))
+      
+/     }
+/   }
+
+/   window.addEventListener("load", requestAnimationFrame.bind(this, fit))
