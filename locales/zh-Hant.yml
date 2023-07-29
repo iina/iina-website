@@ -1,0 +1,67 @@
+---
+zh-Hant:
+  period: 。
+  home: 首頁
+  features: 功能
+  translation: 翻譯
+  downloads: 下載
+  github: GitHub
+  more: 顯示更多
+  release_note: 更新日誌
+  released_on: 發佈於
+  stable_releases: 穩定版
+  latest_stable: 最新穩定版
+  beta_releases: 測試版
+  beta_desc: 如果您已安裝 IINA，可以在偏好設定中勾選「接收測試版更新」來切換到測試版。
+  latest_beta: 最新測試版
+  show_downloads: 顯示下載
+  previous_versions: 先前版本
+  headline_1: 專為 macOS 設計的
+  headline_2: 現代化
+  headline_3: 媒體播放器。
+  download: 下載
+  requirement: 需要 OS X %{min_version} 以上版本，建議使用最新 macOS 版本
+  download_beta: 下載測試版或每夜組建
+  macos_header: 專為現代 macOS 而生。
+  macos_desc: IINA 生來便是一款現代化的 macOS 應用程式，從框架到使用者介面皆採用 macOS 的後 Yosemite 設計語言，並緊跟力度觸控、觸控列、子母畫面等新科技的步伐。
+  macos_dark_mode: 暗色模式
+  macos_dark_mode_desc: IINA 搭載了專為 macOS Mojave 暗色模式量身打造的使用者介面，其中包括調整後的顏色、圖示、材質，提供別緻且統一的外觀。
+  macos_pip: 子母畫面
+  macos_pip_desc: IINA 支援原生子母畫面模式，讓您能夠不受打擾地享受本機或線上影片。
+  more_features: 更多功能
+  playback_header: 什麼都能播。
+  playback_desc: IINA 基於開源媒體播放器 mpv，能夠播放幾乎所有的媒體檔案。搭配 youtube-dl 以及我們的瀏覽器擴充功能，您還能一鍵在 IINA 中播放各式各樣的線上串流。
+  highlights_title: Highlights in IINA v%{version}
+  local_files: 本機檔案
+  online_streams: 線上串流
+  youtube_playlists: YouTube 播放清單
+  opensource_header: 免費、開源、持續開發中。
+  touch_bar: 觸控列
+  media_control: 系統級媒體控制
+  customizable_ui: 可自訂介面
+  online_subtitles: 線上字幕
+  music_mode: 音樂模式
+  gestures: 滑鼠 & 觸控板手勢
+  thumbnail_preview: 縮圖預覽
+  plugin_system: 外掛程式系統
+  screenshots: 螢幕截圖
+  coming_soon: 即將推出
+  download_browser_extensions: 下載瀏覽器擴充功能
+  opensource_desc: IINA 以 Swift 語言開發，並採用 GPLv3 授權，免費且開源。歡迎在 GitHub 上或透過電子郵件發起 issue、功能請求，或是問題回報來貢獻。
+  translation_desc: IINA 已被來自世界各地的譯者翻譯成 20 多種語言。您可以自由地在我們的翻譯平台上改進翻譯或新增您的語言
+  browser_extension: 瀏覽器擴充功能
+  browser_extension_desc_1: 您可以透過我們的瀏覽器擴充功能，直接在 IINA 中播放各式各樣的線上媒體。
+  browser_extension_desc_2: Safari 擴充功能已包含在 IINA 應用程式中，您只需要在 Safari 偏好設定中啟用即可。其他瀏覽器的擴充功能可在下方下載。
+  nightly_builds: 每夜組建
+  nightly_builds_desc_1: 當 develop 分支有新 commit 時，每夜組建將被編譯。它們未經簽署，因此您需要手動更改系統安全設定以使用每夜組建。
+  nightly_builds_desc_2: 點擊
+  nightly_builds_desc_3: 此處
+  nightly_builds_desc_4: 以查看最新的每夜組建。
+  contribute: 如果您有興趣將此網頁翻譯成您的語言，歡迎聯絡我們。
+  crowdin: (由 Crowdin 提供)
+  translation_platform: 翻譯平台
+  repo: GitHub 儲存庫
+  source: 本網頁的原始碼儲存於
+  install_homebrew: 透過 Homebrew Cask 安裝
+  install_homebrew_desc_1: 您也可以透過社群維護的
+  install_homebrew_desc_2: cask 來安裝 IINA，僅須執行下列指令

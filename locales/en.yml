@@ -1,11 +1,21 @@
 ---
 en:
+  period: .
   home: Home
   features: Features
   translation: Translation
   downloads: Downloads
   github: GitHub
+  more: More
   release_note: Release Note
+  released_on: Released on
+  stable_releases: Stable releases
+  latest_stable: Latest stable release
+  beta_releases: Beta releases
+  beta_desc: If you already have IINA installed, you can change to beta channel by checking the "Receive beta updates" button in Preferences.
+  latest_beta: Latest beta release
+  show_downloads: Show downloads
+  previous_versions: Previous versions
   headline_1: The
   headline_2: modern
   headline_3: media player for macOS.
@@ -20,4 +30,38 @@ en:
   macos_pip_desc: IINA supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without being distracted.
   more_features: More Features
   playback_header: Plays anything.
+  playback_desc: Powered by the open source media player mpv, IINA can play almost every media file you have. With the support of youtube-dl and our browser extensions, you can also play a variety of online streams in IINA via one click.
   highlights_title: Highlights in IINA v%{version}
+  local_files: Local files
+  online_streams: Online streams
+  youtube_playlists: YouTube playlists
+  opensource_header: Free, open source, in active development.
+  touch_bar: Touch Bar
+  media_control: System Media Control
+  customizable_ui: Customizable UI
+  online_subtitles: Online Subtitles
+  music_mode: Music Mode
+  gestures: Mouse & Trackpad Gestures
+  thumbnail_preview: Thumbnail Preview
+  plugin_system: Plugin System
+  screenshots: Screenshots
+  coming_soon: Coming soon
+  download_browser_extensions: Download browser extensions
+  opensource_desc: Written in the Swift programming language, IINA is free and open-sourced under the GPLv3 license. Please feel free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by email.
+  translation_desc: IINA has been translated into more than 20 languages by translators from all over the world. You can improve the translation or add your new language freely via our translation platform
+  browser_extension: Browser extensions
+  browser_extension_desc_1: You can open various online media in IINA directly from web browsers by using our browser extensions.
+  browser_extension_desc_2: The Safari App Extension is already included in the IINA App bundle, and you may only need to enable it in Safari Preferences. Extensions for other browsers could be downloaded below.
+  nightly_builds: Nightly builds
+  nightly_builds_desc_1: Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+  nightly_builds_desc_2: Click
+  nightly_builds_desc_3: here
+  nightly_builds_desc_4: to view all nightly builds.
+  contribute: If you are interested in translating this website to your language, please feel free to contact us.
+  crowdin: (powered by Crowdin)
+  translation_platform: Translation platform
+  repo: GitHub repository
+  source: You can find the source code of this website on
+  install_homebrew: Install via Homebrew Cask
+  install_homebrew_desc_1: You may also install IINA via the community-maintained
+  install_homebrew_desc_2: cask by running

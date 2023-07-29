@@ -10,9 +10,17 @@ footer
                         var addr = 'develo' + 'per'+ 's@ii' + 'na.io';
                         document.write('<a href="mailto:' + addr + '">' + addr + '</a>');
         hr
-        .source
-            | You can find the source code of this website on&nbsp;
-            = link_to 'GitHub', 'https://github.com/iina/iina-website'
-            | .
-        .contribute
-            | If you are interested in translating this website to your language, please feel free to contact us.
+        .d-flex.justify-content-between
+            .left
+                .source
+                    = t(:source)
+                    |&nbsp;
+                    = link_to 'GitHub', 'https://github.com/iina/iina-website'
+                    = t(:period)
+                .contribute
+                    = t(:contribute)
+            .right.d-flex
+                .en.ml-2
+                    = link_to 'English', './'
+                .zh-Hant.ml-2
+                    = link_to '中文 (繁體)', '/zh-Hant'
