@@ -60,4 +60,54 @@ $(() => {
   $("#navbarSupportedContent")
     .on("show.bs.collapse", () => $(".navbar").addClass("expanded"))
     .on("hide.bs.collapse", () => $(".navbar").removeClass("expanded"));
+
+  if (document.getElementById("nightly-builds")) {
+    load_nightly();
+  }
 });
+
+// Nightly table
+
+function formatDate(str) {
+  return new Date(str).toDateString();
+}
+
+async function load_nightly() {
+  const data = await fetch_artifacts();
+  const tableBody = document.getElementById("table-body");
+  tableBody.innerHTML = "";
+
+  try {
+    tableBody.append(...await Promise.all(data.artifacts.map(async item => {
+      const tr = document.createElement("tr");
+      const expires = item.expired ? "Expired" : formatDate(item.expires_at);
+      const sha = item.workflow_run.head_sha
+      const url = `https://github.com/iina/iina/actions/runs/${item.workflow_run.id}/artifacts/${item.id}`;
+      // const commit = await fetch_commit(sha);
+      tr.innerHTML = `
+    <td>${formatDate(item.created_at)}</td>
+    <td>${expires}</td>
+    <td>${item.workflow_run.head_branch}</td>
+    <td>${sha.substring(0, 8)}</td>
+    <td><a href="${url}">Download on GitHub</a</td>
+    `;
+      // <td>${commit.message}</td>
+      // <td>${commit.committer.name}</td>
+      return tr;
+    })));
+  } catch {
+    tableBody.innerHTML = `<div class="text-danger">Error occured when fetching data from GitHub. Please visit GitHub Actions directly.</div>`;
+  }
+}
+
+async function fetch_artifacts() {
+    const res = await fetch("https://api.github.com/repos/iina/iina/actions/artifacts?per_page=100");
+    return await res.json();
+}
+
+async function fetch_commit(sha) {
+  const res = await fetch(`https://api.github.com/repos/iina/iina/commits/${sha}`);
+  return await res.json().commit;
+}
+
+window.fetch_artifacts = fetch_artifacts;

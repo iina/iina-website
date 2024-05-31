@@ -1,0 +1,28 @@
+---
+title: Nightly Download | IINA - The modern media player for macOS
+html_class: download
+---
+
+section#downloads.downloads
+    section#nightly-builds
+        .container
+            h2 Nightly builds
+            .alert.alert-info.mt-4.mb-4
+                | Nightly builds are built by GitHub Actions based on each new commit on the develop branch.&nbsp;
+                strong You may need to login on GitHub to download a nightly build.&nbsp;
+                | They are not signed, so you need to manually change your system security settings to use nightly builds.&nbsp;
+            p
+                markdown:
+                    This page fetches the latest builds using GitHub API. You can visit
+                    [GitHub Actions](https://github.com/iina/iina/actions) for more information and builds.
+            .nightly-builds-list
+                table.table.small
+                    thead 
+                        th Created At
+                        th Expires
+                        th Branch
+                        th SHA
+                        / th Message
+                        / th Author
+                        th Download
+                    tbody#table-body
