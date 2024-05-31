@@ -67,3 +67,10 @@ v1.3.2:
       Maintaining a free and open-source software costs us time and money.
       If you like IINA and would like to support us financially, please consider sponsoring us on GitHub.
       More ways to donate will be added in the future.
+v1.3.3:
+  - title: More Bug Fixes
+    desc: IINA 1.3.3 includes important fixes to bugs and crashes to make IINA more stable.
+
+v1.3.4:
+  - title: More Bug Fixes
+    desc: IINA 1.3.4 uses the new OpenSubtitles API and includes important fixes to bugs and crashes to make IINA more stable.
