@@ -42,9 +42,8 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-
 locales = %i(zh-Hans)
-data.highlights.each_key do |v|
+@app.data.highlights.each_key do |v|
   ver = v[1..]
   proxy "/highlights/#{ver}/index.html", "/highlights-template.html", locals: { version: ver }, locale: :en, ignore: true
   locales.each do |lang|
@@ -115,7 +114,7 @@ end
 
 activate :external_pipeline,
    name: :webpack,
-   command: build? ? 'yarn run build' : 'yarn run start',
+   command: build? ? 'npm run build' : 'npm run start',
    source: 'tmp/dist',
    latency: 1
 

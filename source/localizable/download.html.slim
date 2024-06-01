@@ -104,8 +104,6 @@ section#downloads.downloads
         .container
             h5 Nightly builds
             p.text-muted
-                | Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
-            p.text-muted
-                | Click&nbsp;
-                = link_to 'here', '//nightly.iina.io'
-                | &nbsp;to view all nightly builds.
+                | Nightly builds are built by GitHub Actions based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+            div
+                = link_to 'Nightly Builds', '/nightly', class: 'btn btn-primary'
