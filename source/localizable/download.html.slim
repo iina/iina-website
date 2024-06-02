@@ -23,23 +23,21 @@ section#downloads.downloads
                 .text-muted.small.mt-2
                     | SHA256:
                     = latest.sha256
+                .small
+                    a href="#how-to-verify" data-toggle="collapse" How to verify the integrity of the downloaded file?
+                    #how-to-verify.collapse.pt-4
+                        p
+                            | Run the following command in Terminal and check if the output matches the SHA256 value above.
+                            br
+                            | You may need to replace the file path with the actual path of the downloaded file.
+                        pre.bg-light
+                            = "shasum -a 256 ~/Downloads/IINA.v#{latest.version}.dmg"
             hr.my-4
-            h6 Previous versions
-            ul.small.m-0.pl-4
-                - data.versions.stable.drop(1).first(8).each do |v|
-                    li
-                        = link_to v.version, download_link(v.version)
-                        span.release-date.ml-2.text-muted
-                            | released on&nbsp;
-                            = v.date
-                        span ,
-                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
-                            = t(:release_note)
             .mb-2 
-            a href="#more-downloads" data-toggle="collapse" More
+            a href="#more-downloads" data-toggle="collapse" Previous versions
             #more-downloads.collapse
                 ul.small.m-0.pl-4
-                    - data.versions.stable.drop(1)[8..-1].each do |v|
+                    - data.versions.stable.drop(1).each do |v|
                         li
                             = link_to v.version, download_link(v.version)
                             span.release-date.ml-2.text-muted
@@ -75,7 +73,7 @@ section#downloads.downloads
                             span.release-date.ml-2.text-muted
                                 | released on&nbsp;
                                 = v.date
-                            = link_to release_note_link(v.version), class: 'release-note ml-2' do
+                            = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
                                 = t(:release_note)
     section#install-homebrew.mt-5
         .container
