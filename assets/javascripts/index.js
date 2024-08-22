@@ -27,6 +27,8 @@ import { faCog } from "@fortawesome/free-solid-svg-icons/faCog";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons/faTerminal";
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { faSitemap } from "@fortawesome/free-solid-svg-icons/faSitemap";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 
 library.add(
   faCloudDownloadAlt,
@@ -53,6 +55,8 @@ library.add(
   faTerminal,
   faTools,
   faSitemap,
+  faTimes,
+  faCheck,
 );
 dom.watch();
 
@@ -74,29 +78,40 @@ function formatDate(str) {
 
 async function load_nightly() {
   const data = await fetch_artifacts();
+  const commits = await fetch_commits();
   const tableBody = document.getElementById("table-body");
   tableBody.innerHTML = "";
 
+  let commit_dict = {};
+  commits.forEach(commit => {
+    commit_dict[commit.sha] = {
+      "author": commit.commit.author.name,
+      "message": commit.commit.message
+    };
+  });
+
   try {
-    tableBody.append(...await Promise.all(data.artifacts.map(async item => {
-      const tr = document.createElement("tr");
-      const expires = item.expired ? "Expired" : formatDate(item.expires_at);
-      const sha = item.workflow_run.head_sha
-      const url = `https://github.com/iina/iina/actions/runs/${item.workflow_run.id}/artifacts/${item.id}`;
-      // const commit = await fetch_commit(sha);
-      tr.innerHTML = `
-    <td>${formatDate(item.created_at)}</td>
-    <td>${expires}</td>
-    <td>${item.workflow_run.head_branch}</td>
-    <td>${sha.substring(0, 8)}</td>
-    <td><a href="${url}">Download on GitHub</a</td>
-    `;
-      // <td>${commit.message}</td>
-      // <td>${commit.committer.name}</td>
-      return tr;
-    })));
+    tableBody.append(...await Promise.all(data.artifacts
+      .filter(item => item.workflow_run.head_sha in commit_dict)
+      .map(async item => {
+        const tr = document.createElement("tr");
+        const sha = item.workflow_run.head_sha;
+        const url = `https://github.com/iina/iina/actions/runs/${item.workflow_run.id}/artifacts/${item.id}`;
+        const commit = commit_dict[sha];
+
+        tr.innerHTML = `
+          <td>${formatDate(item.created_at)}</td>
+          <td align="center"><i class="fa-solid fa-${item.expired ? 'times' : 'check'}"></i></td>
+          <td>${commit.message.split('\n')[0]}</td>
+          <td>${commit.author}</td>
+          <td><a href="https://github.com/iina/iina/commit/${sha}">${sha.substring(0, 8)}</a></td>
+          <td><a href="${url}">Download on GitHub</a></td>
+        `;
+        return tr;
+      })
+    ));
   } catch {
-    tableBody.innerHTML = `<div class="text-danger">Error occured when fetching data from GitHub. Please visit GitHub Actions directly.</div>`;
+    tableBody.innerHTML = `<div class="text-danger">Error occurred when fetching data from GitHub. Please visit GitHub Actions directly.</div>`;
   }
 }
 
@@ -105,9 +120,9 @@ async function fetch_artifacts() {
     return await res.json();
 }
 
-async function fetch_commit(sha) {
-  const res = await fetch(`https://api.github.com/repos/iina/iina/commits/${sha}`);
-  return await res.json().commit;
+async function fetch_commits(sha) {
+  const res = await fetch(`https://api.github.com/repos/iina/iina/commits?per_page=100`);
+  return await res.json();
 }
 
 window.fetch_artifacts = fetch_artifacts;
