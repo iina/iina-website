@@ -4,6 +4,9 @@
   nav.navbar.navbar-light.navbar-expand-sm
     = link_to '/', class: 'navbar-brand' do
       = image_tag "iina-icon-60.png", alt: "Home"
+      span.ml-2 IINA
+    - if plugin_doc?
+      | Plugin Documentation
     button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
       span.fas.fa-bars
 

@@ -1,4 +1,37 @@
 stable:
+  - version: 1.3.5
+    date: 2024-05-31
+    sha256: 3b8b9199f41a18c2aa8b30e5824d0c9daccc1d59176832ea650f533fcbdc6a38
+  - version: 1.3.4
+    date: 2023-12-31
+    sha256: 7de50f5ad4a2fd5b27bf59a31b2060074c05331c7aafa533ad4adab65028d78c
+  - version: 1.3.3
+    date: 2023-07-20
+    sha256: 4b3f6c4bed3bb77dbe29c12bf6d5d0959284afb01c7b59a35fd71a3a27088991
+  - version: 1.3.2
+    date: 2023-07-07
+    sha256: ac5e72bf6407595514b327ffbbbf235919f80badbd18126007f8bc62768a1c19
+  - version: 1.3.1
+    date: 2022-11-06
+    sha256: c646642a2884cb0516922170e0f6d4990b12b41d6244b08d53f318dbb9518c2f
+  - version: 1.3.0
+    date: 2022-05-30
+    sha256: b50c416828005e1eec0dc8066c961efcc389e6be1a5a595541ea62d48d31a391
+  - version: 1.2.0
+    date: 2021-01-20
+    sha256: 91b87e80055f097a1cb7a8c91979deb5303315f2067552cbe7387f48bfc42736
+  - version: 1.1.2
+    date: 2020-11-19
+    sha256: 783ff165c73839c87cf9fd5f4418b87131063c3be77abc94dfca0585aa992b98
+  - version: 1.1.1
+    date: 2020-11-10
+    sha256: ae9ac06459c2b9cd160592881c323d3fb3b50a9b70ba89c6f9f1e13df85c6881
+  - version: 1.1.0
+    date: 2020-10-13
+    sha256: 44346b32137be39f74206181a370dac28ff0ae645d2c809f136f019b11863e27
+  - version: 1.0.7
+    date: 2020-06-12
+    sha256: 1b1938b3a9640b4c26960aefab1ebe077bfaaf4b7a62ccfce5a7e138c9c56d75
   - version: 1.0.6
     date: 2020-01-13
     sha256: 51cce921ef52f00df9b474e230f33d5a947c5b6e4d33aac4213a0e07b4b4a246
@@ -36,6 +69,12 @@ stable:
     date: 2017-10-15
     sha256: 7f7886555227fff45b05d3a48ff31c4e70a1c778695f829e747ad4af35342668
 beta:
+  - version: 1.1.0-beta2
+    date: 2020-10-07
+    sha256: 11f1f22c2b5fb8e6adc338d7122d37f44a1bb73a7d3a4fc3067d5651cfa2a833
+  - version: 1.1.0-beta1
+    date: 2020-09-02
+    sha256: abafde4a187403721ad0bb2240a855b2e8c6d0d294ca8e8c3a896bee1e095587
   - version: 1.0.7-beta2
     date: 2020-04-13
     sha256: 562035b11d648126149ee9f47185ff4665c529c4acd138317d3f6535c31a14f0

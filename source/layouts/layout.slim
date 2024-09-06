@@ -6,12 +6,27 @@ html
         meta content="ie=edge" http-equiv="x-ua-compatible" /
         meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /
         title = current_page.data.title || "IINA"
+        / favicons
+        link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"
+        link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"
+        link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"
+        link rel="manifest" href="/images/site.webmanifest"
+        link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5"
+        meta name="msapplication-TileColor" content="#da532c"
+        meta name="theme-color" content="#ffffff"
         / assets
         link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&amp;subset=latin-ext" rel="stylesheet"
         = stylesheet_link_tag "site"
         = javascript_include_tag "site"
     body class=(current_page.data.html_class)
         = partial "header"
-        #main
-            = yield
-            = partial "footer"
+        - if plugin_doc?
+            #main
+                #doc-index
+                    = partial 'plugin/documentation/plugin-doc-index'
+                #doc-body
+                    = yield
+        - else
+            #main
+                = yield
+                = partial "footer"

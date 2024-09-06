@@ -10,25 +10,37 @@ html
     +media-breakpoint-down(xs)
         font-size: 13px
 
-#main
-    @import "index"
-    @import "features"
-    @import "download"
+body.index
+    #main
+        @import "_index"
+body.features
+    #main
+        @import "_features"
+body.download
+    #main
+        @import "_download"
+body.plugin
+    #main
+        @import "_plugin"
 
 .svg-inline--fa
     margin-right: 0.5rem
 
 body.index
+    #header
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        z-index: 1000
+        .navbar
+            background-color: transparentize($light, .3)
+            backdrop-filter: blur(10px)
     +media-breakpoint-down(xs)
         #main
             .title
                 padding-top: 11.875rem
         #header
-            position: absolute
-            left: 0
-            right: 0
-            top: 0
-            z-index: 1000
             .navbar
                 transition: all 0.3s ease-out !important
                 box-shadow: 0 0 6px transparentize(#000, .75)
@@ -40,9 +52,13 @@ body.index
 #header
     .navbar
         background-color: $light
+        backdrop-filter: blur(10px)
         border-bottom: 1px solid $gray-300
-        .navbar-brand img
-            width: 2rem
+        .navbar-brand
+            span
+                vertical-align: middle
+            img
+                width: 2rem
         .navbar-toggler
             border: none
         .nav-link

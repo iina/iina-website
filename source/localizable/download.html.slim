@@ -23,18 +23,29 @@ section#downloads.downloads
                 .text-muted.small.mt-2
                     | SHA256:
                     = latest.sha256
+                .small
+                    a href="#how-to-verify" data-toggle="collapse" How to verify the integrity of the downloaded file?
+                    #how-to-verify.collapse.pt-4
+                        p
+                            | Run the following command in Terminal and check if the output matches the SHA256 value above.
+                            br
+                            | You may need to replace the file path with the actual path of the downloaded file.
+                        pre.bg-light
+                            = "shasum -a 256 ~/Downloads/IINA.v#{latest.version}.dmg"
             hr.my-4
-            h6 Previous versions
-            ul.small.m-0.pl-4
-                - data.versions.stable.drop(1).each do |v|
-                    li
-                        = link_to v.version, download_link(v.version)
-                        span.release-date.ml-2.text-muted
-                            | released on&nbsp;
-                            = v.date
-                        span ,
-                        = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
-                            = t(:release_note)
+            .mb-2 
+            a href="#more-downloads" data-toggle="collapse" Previous versions
+            #more-downloads.collapse
+                ul.small.m-0.pl-4
+                    - data.versions.stable.drop(1).each do |v|
+                        li
+                            = link_to v.version, download_link(v.version)
+                            span.release-date.ml-2.text-muted
+                                | released on&nbsp;
+                                = v.date
+                            span ,
+                            = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
+                                = t(:release_note)
         .dl-card
             h5 Beta releases
             p.text-muted
@@ -62,7 +73,7 @@ section#downloads.downloads
                             span.release-date.ml-2.text-muted
                                 | released on&nbsp;
                                 = v.date
-                            = link_to release_note_link(v.version), class: 'release-note ml-2' do
+                            = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
                                 = t(:release_note)
     section#install-homebrew.mt-5
         .container
@@ -72,7 +83,7 @@ section#downloads.downloads
                 = link_to 'Homebrew', 'https://brew.sh/'
                 | &nbsp;cask by running:
             pre.bg-light.p-2.text-center
-                | brew cask install iina
+                | brew install --cask iina
     section#browser-extension.mt-5
         .container
             h5 Browser extensions
@@ -91,8 +102,6 @@ section#downloads.downloads
         .container
             h5 Nightly builds
             p.text-muted
-                | Nightly builds are built based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
-            p.text-muted
-                | Click&nbsp;
-                = link_to 'here', '//nightly.iina.io'
-                | &nbsp;to view all nightly builds.
+                | Nightly builds are built by GitHub Actions based on each new commit on the develop branch. They are not signed so you need to manually change your system security settings to use nightly builds.
+            div
+                = link_to 'Nightly Builds', '/nightly', class: 'btn btn-primary'
