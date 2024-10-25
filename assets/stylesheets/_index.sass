@@ -8,10 +8,11 @@ section
     overflow: hidden
 
 .title
+    position: relative
     background: linear-gradient(to bottom, #fefefe, #eee)
-    padding: 17rem 0 13rem 0
+    padding: 17rem 0 15rem 0
     +media-breakpoint-down(md)
-        padding: 8rem 0 6rem 0
+        padding: 8rem 0 13rem 0
     +media-breakpoint-up(xl)
         padding: 18rem 0 16rem 0
     .modern
@@ -264,3 +265,35 @@ section
         color: $gray-900
         border: 1px solid $gray-900
         border-radius: 1.75rem
+
+.plugin-pr
+    position: absolute
+    .plugin-pr-content
+        padding: 1rem 2rem
+        background: linear-gradient(180deg, $gray-100, $gray-300)
+        .text-end
+            text-align: right
+            padding-top: 0.75rem
+            a
+                color: $gray-700 !important
+
+@include media-breakpoint-up(md)
+    .plugin-pr
+        bottom: 2rem
+        left: 0
+        right: 0
+        .plugin-pr-content
+            border-radius: 16px
+            border: 1px solid $gray-400
+            box-shadow: 0 2px 5px rgba(0,0,0,.1)
+
+@include media-breakpoint-down(sm)
+    .plugin-pr
+        bottom: 0
+        left: 0
+        right: 0
+        background: linear-gradient(180deg, $gray-200, $gray-400)
+        border-top: 1px solid $gray-500
+        .plugin-pr-content
+            background: none
+            padding: 1rem 0

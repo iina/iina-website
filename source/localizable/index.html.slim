@@ -39,6 +39,26 @@ section.title
         p.other-downloads
             = link_to t(:download_beta), localized_path('/download')
 
+    .plugin-pr
+        .container-md
+            .plugin-pr-content
+                .row
+                    .col-sm
+                        h6
+                            span.fas.fa-cube
+                            | Now with the plugin system
+                        div.small.text-muted
+                            | IINA 1.4.0 is now in beta with the new plugin system.
+                    .col-sm.text-end
+                        = link_to localized_path('/plugins'), class: 'pr-link mr-4' do
+                            span.fas.fa-angle-right
+                            | Learn more
+                        = link_to localized_path('/downloads'), class: 'pr-link' do
+                            span.fas.fa-angle-right
+                            | Downloads
+
+
+
 section.highlight.highlight--macos
     .container
         h2 = t(:macos_header)
