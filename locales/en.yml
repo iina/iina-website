@@ -10,6 +10,7 @@ en:
   headline_2: modern
   headline_3: media player for macOS.
   download: Download
+  plugins: Plugins
   requirement: Requires OS X %{min_version}+, the latest macOS recommended
   download_beta: Download beta releases or nightly builds
   macos_header: For and only for modern macOS.

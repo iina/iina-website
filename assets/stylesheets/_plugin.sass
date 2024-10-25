@@ -1,23 +1,77 @@
 @import "variables"
 
+.cube
+    position: absolute
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6C495 83.4 512 107.5 512 134.6l0 242.9c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4L0 134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66L82.3 128 256 190l173.7-62L256 66zm32 368.6l160-57.1 0-188L288 246.6l0 188z"/></svg>')
+    opacity: 0.05
+    &.lg
+        width: 80px
+        height: 80px
+    &.md
+        width: 40px
+        height: 40px
+    &.sm
+        width: 20px
+        height: 20px
+
+#overview
+    padding: 4rem 0 0 0
+    background: linear-gradient(180deg, $gray-300, #fff)
+    position: relative
+    .background
+        transform: translateX(-20px)
+        position: absolute
+        width: 100%
+
+#demo
+    padding: 4rem 0
+    pre
+        padding: 16px
+        border-radius: 6px
+        box-shadow: 0 0 10px rgba(0,0,0,.5)
+        max-width: 600px
+        margin: 2rem auto 1rem auto
+    .description
+        color: rgba(0,0,0,.6)
+        font-size: 0.875rem
+        text-align: center
+
 .modules
     display: flex
     flex-wrap: wrap
-    margin: 4rem -1rem
+    margin: 2rem -1rem
     .module-wrapper
         padding: 1rem
         width: 33.333%
     .module-container
         height: 100%
-        border: 1px solid #e5e5e5
-        border-radius: 4px
-        padding: 1rem
+        border: 1px solid $gray-300
+        border-radius: 8px
+        padding: 1.25rem
+        box-shadow: 0 2px 5px rgba(0,0,0,.1)
+        background: linear-gradient(150deg, #fff, $gray-100)
     .module-name
         font-size: 1.125rem
         font-weight: bold
-        margin-bottom: 1rem
+        margin-bottom: 0.875rem
         color: $primary
         span
             color: #212529
     .module-desc
         color: rgba(0,0,0,.6)
+
+#resources
+    padding: 0 0 4rem 0
+
+@include media-breakpoint-down(sm)
+    .cube.h
+        display: none
+    .modules
+        .module-wrapper
+            padding: 0.5rem
+            width: 50%
+
+@include media-breakpoint-down(xs)
+    .modules
+        .module-wrapper
+            width: 100%

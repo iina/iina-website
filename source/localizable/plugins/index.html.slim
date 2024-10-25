@@ -1,0 +1,189 @@
+---
+title: Plugin System | IINA - The modern media player for macOS
+html_class: plugin
+---
+
+section#overview
+    .background
+        .cube.lg style="left: 0%; top: -40px;"
+        .cube.lg.h style="left: 20%; top: -40px;"
+        .cube.lg style="left: 40%; top: -40px;"
+        .cube.lg.h style="left: 60%; top: -40px;"
+        .cube.lg style="left: 80%; top: -40px;"
+        .cube.lg.h style="left: 100%; top: -40px;"
+        .cube.md.h style="left: 10%; top: 40px;"
+        .cube.md style="left: 30%; top: 40px;"
+        .cube.md.h style="left: 50%; top: 40px;"
+        .cube.md style="left: 70%; top: 40px;"
+        .cube.md.h style="left: 90%; top: 40px;"
+        .cube.sm.h style="left: 0%; top: 110px;"
+        .cube.sm style="left: 20%; top: 110px;"
+        .cube.sm.h style="left: 40%; top: 110px;"
+        .cube.sm style="left: 60%; top: 110px;"
+        .cube.sm.h style="left: 80%; top: 110px;"
+        .cube.sm style="left: 100%; top: 110px;"
+    .container
+        h1 Plugin System
+        .pt-4
+            markdown:
+                The plugin system allows you to extend IINA's functionality with JavaScript.
+                You can control the playback, call the mpv API, access the network and file system,
+                adding custom UI elements, and more. The plugin system is available in IINA 1.4.0.
+
+section#demo
+    .container
+        h4 Concise API, powerful features
+        .pt-4
+            markdown:
+                With several lines of code, you can implement the exact feature tailored to your needs.
+                Furthermore, with the Official _User Scripts_ plugin, you can just copy-and-paste code snippets into IINA without writing plugin packages.
+        .row
+            .col
+                pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "
+                    <span style="color: rgb(255, 123, 114); font-weight: 400;">const</span> { core, event, overlay } = iina;
+                    <br><span>event.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">on</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">"iina.file-loaded"</span>, <span style="color: rgb(201, 209, 217); font-weight: 400;">() =&gt;</span> {
+                    <br><span>  overlay.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">simpleMode</span>();
+                    <br><span>  overlay.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">setContent</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">`&lt;p&gt;<span style="color: rgb(201, 209, 217); font-weight: 400;">${core.status.title}</span>&lt;/p&gt;`</span>);
+                    <br><span>  overlay.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">setStyle</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">`p { font-size: 48px; }`</span>);
+                    <br><span>  overlay.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">show</span>();
+                    <br><span>})</span>
+                .description
+                    | Display the video title in a large font on the top of the video
+            .col
+                pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "
+                    <span style="color: rgb(255, 123, 114); font-weight: 400;">const</span> { core, event } = iina;
+                    <br><span>event.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">on</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">"mpv.pause.changed"</span>, <span style="color: rgb(201, 209, 217); font-weight: 400;">() =&gt;</span> {
+                    <br><span>  core.</span><span style="color: rgb(201, 209, 217); font-weight: 400;">window</span>.<span style="color: rgb(201, 209, 217); font-weight: 400;">miniaturized</span> = <span>core.status.paused</span>;
+                    <br><span>});</span>
+                    <br><span>event.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">on</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">"iina.window-deminiaturized"</span>, <span style="color: rgb(201, 209, 217); font-weight: 400;">() =&gt;</span> {
+                    <br><span>  core.</span><span style="color: rgb(210, 168, 255); font-weight: 400;">resume</span>();
+                    <br><span>});</span>
+                .description
+                    | Minimize the window when the video is paused, and resume when restored
+
+section#modules
+    .container
+        h4 What you can do with the plugin system
+        .modules
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-cube
+                        span Core
+                    .module-desc
+                        | Control the playback and get/set various status from the window frame to subtitle tracks.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-play-circle
+                        span MPV
+                    .module-desc
+                        | Access the mpv API with properties and hooks for advanced playback control.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-broadcast-tower
+                        span Event
+                    .module-desc
+                        | Register and remove listeners for IINA and mpv events.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-globe
+                        span HTTP
+                    .module-desc
+                        | Make HTTP and XMLRPC requests.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-list
+                        span Playlist
+                    .module-desc
+                        | Control the playlist and add custom playlist context menu items.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-comment-dots
+                        span Subtitle
+                    .module-desc
+                        | Register custom subtitle downloaders that integrates with IINA's user interface.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-bars
+                        span Menu
+                    .module-desc
+                        | Add menu items with keyboard shortcuts under the Plugin menu.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-layer-group
+                        span Overlay
+                    .module-desc
+                        | Render custom webview-based content on the top of videos.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-columns
+                        span Sidebar View
+                    .module-desc
+                        | Add a tab in the sidebar with custom webview-based contents.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .far.fa-fw.fa-window-restore
+                        span Standalone Window
+                    .module-desc
+                        | Display a webview-based standalone window for complicated user interface.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-sitemap
+                        span Global Controller
+                    .module-desc
+                        | Spawn and control multiple player instances.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-file-alt
+                        span File
+                    .module-desc
+                        | Access the user file system or read/write sandboxed temporary files and data files.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-cog
+                        span Preferences
+                    .module-desc
+                        | Store preferences and display a settings page in IINA's preferences panel.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-tools
+                        span Utils
+                    .module-desc
+                        | Display system dialogs and run custom executables.
+            .module-wrapper
+                .module-container
+                    .module-name
+                        .fas.fa-fw.fa-terminal
+                        span Console
+                    .module-desc
+                        | Print logs for debugging, viewable from IINA's log viewer.
+
+section#resources
+    .container
+        h4 Start building your plugin
+        .my-4
+            markdown:
+                An `iina-plugin` command line tool is included with the IINA installation to help you create, build, and run plugins.
+                We have also prepared a complete documentation with tutorials and API references.
+        a.btn.btn-primary href='https://docs.iina.io/index.html' target='_blank'
+            | Read the documentation
+            .small at docs.iina.io
+        .my-4
+            markdown:
+                You may also find these resources helpful:
+
+                - [Official User Scripts plugin](https://github.com/iina/iina-plugin-userscript):
+                  simply enter `iina/iina-plugin-userscript` when installing.

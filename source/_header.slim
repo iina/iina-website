@@ -15,9 +15,10 @@
           /li.nav-item
             = link_to localized_path('/'), class: 'nav-link' do
               = t(:home)
-          /li.nav-item.mr-2
-            = link_to localized_path('/features'), class: 'nav-link' do
-              = t(:features)
+          li.nav-item
+            = link_to localized_path('/plugins'), class: 'nav-link' do
+              span class=("fas fa-cube")
+              = t(:plugins)
           li.nav-item
             = link_to 'https://translate.iina.io', class: 'nav-link', target: '_blank' do
               span class=("fas fa-globe-americas")
