@@ -68,6 +68,20 @@ $(() => {
   if (document.getElementById("nightly-builds")) {
     load_nightly();
   }
+
+  if (document.body.classList.contains("download")) {
+    // if url contains #beta-downloads, show the section and scroll to it
+    if (location.hash.includes("#beta-downloads")) {
+      $("#beta-downloads").collapse("show");
+      const element = document.getElementById("beta-downloads");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }
 });
 
 // Nightly table
@@ -80,48 +94,62 @@ async function load_nightly() {
   const data = await fetch_artifacts();
   const commits = await fetch_commits();
   const tableBody = document.getElementById("table-body");
+  if (!tableBody) return;
+
   tableBody.innerHTML = "";
 
   let commit_dict = {};
-  commits.forEach(commit => {
+  commits.forEach((commit) => {
     commit_dict[commit.sha] = {
-      "author": commit.commit.author.name,
-      "message": commit.commit.message
+      author: commit.commit.author.name,
+      message: commit.commit.message,
     };
   });
 
   try {
-    tableBody.append(...await Promise.all(data.artifacts
-      .filter(item => item.workflow_run.head_sha in commit_dict)
-      .map(async item => {
-        const tr = document.createElement("tr");
-        const sha = item.workflow_run.head_sha;
-        const url = `https://github.com/iina/iina/actions/runs/${item.workflow_run.id}/artifacts/${item.id}`;
-        const commit = commit_dict[sha];
+    tableBody.append(
+      ...(await Promise.all(
+        data.artifacts
+          .filter((item) => item.workflow_run.head_sha in commit_dict)
+          .map(async (item) => {
+            const tr = document.createElement("tr");
+            const sha = item.workflow_run.head_sha;
+            const url = `https://github.com/iina/iina/actions/runs/${item.workflow_run.id}/artifacts/${item.id}`;
+            const commit = commit_dict[sha];
 
-        tr.innerHTML = `
+            tr.innerHTML = `
           <td>${formatDate(item.created_at)}</td>
-          <td align="center"><i class="fa-solid fa-${item.expired ? 'times' : 'check'}"></i></td>
-          <td>${commit.message.split('\n')[0]}</td>
+          <td align="center"><i class="fa-solid fa-${
+            item.expired ? "times" : "check"
+          }"></i></td>
+          <td>${commit.message.split("\n")[0]}</td>
           <td>${commit.author}</td>
-          <td><a href="https://github.com/iina/iina/commit/${sha}">${sha.substring(0, 8)}</a></td>
+          <td><a href="https://github.com/iina/iina/commit/${sha}">${sha.substring(
+              0,
+              8,
+            )}</a></td>
           <td><a href="${url}">Download on GitHub</a></td>
         `;
-        return tr;
-      })
-    ));
+            return tr;
+          }),
+      )),
+    );
   } catch {
     tableBody.innerHTML = `<div class="text-danger">Error occurred when fetching data from GitHub. Please visit GitHub Actions directly.</div>`;
   }
 }
 
 async function fetch_artifacts() {
-    const res = await fetch("https://api.github.com/repos/iina/iina/actions/artifacts?per_page=100");
-    return await res.json();
+  const res = await fetch(
+    "https://api.github.com/repos/iina/iina/actions/artifacts?per_page=100",
+  );
+  return await res.json();
 }
 
 async function fetch_commits(sha) {
-  const res = await fetch(`https://api.github.com/repos/iina/iina/commits?per_page=100`);
+  const res = await fetch(
+    `https://api.github.com/repos/iina/iina/commits?per_page=100`,
+  );
   return await res.json();
 }
 
