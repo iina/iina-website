@@ -22,6 +22,17 @@ section.title
             span.modern = t(:headline_2)
             | &nbsp;
             = t(:headline_3)
+
+        .plugin-pr
+            .plugin-pr-content
+                h6
+                    span.fas.fa-cube
+                    | Now with the plugin system
+                .plugin-pr-links
+                    = link_to localized_path('/plugins'), class: 'pr-link' do
+                        span.fas.fa-angle-right
+                        | Learn more
+
         .download
             = link_to 'https://github.com/iina/iina', class: 'dl-btn github' do
                 span.fab.fa-github
@@ -35,27 +46,9 @@ section.title
                 = t(:download)
                 span.light v#{latest}
         p.requirement
-            = I18n.t(:requirement, min_version: '10.13')
+            = I18n.t(:requirement, min_version: '10.15')
         p.other-downloads
             = link_to t(:download_beta), localized_path('/download')
-
-    .plugin-pr
-        .container-md
-            .plugin-pr-content
-                .row
-                    .col-sm
-                        h6
-                            span.fas.fa-cube
-                            | Now with the plugin system
-                        div.small.text-muted
-                            | IINA 1.4.0 is now in beta with the new plugin system.
-                    .col-sm.text-end
-                        = link_to localized_path('/plugins'), class: 'pr-link mr-4' do
-                            span.fas.fa-angle-right
-                            | Learn more
-                        = link_to localized_path('/download#beta-downloads'), class: 'pr-link' do
-                            span.fas.fa-angle-right
-                            | Downloads
 
 
 

@@ -267,33 +267,15 @@ section
         border-radius: 1.75rem
 
 .plugin-pr
-    position: absolute
     .plugin-pr-content
-        padding: 1rem 2rem
-        background: linear-gradient(180deg, $gray-100, $gray-300)
-        .text-end
-            text-align: right
-            padding-top: 0.75rem
+        display: flex
+        align-content: flex-start
+        align-items: center
+        padding: 1rem 0
+        h6
+            margin: 0
+            color: #e76000
+        .plugin-pr-links
+            margin-left: 2rem
             a
                 color: $gray-700 !important
-
-@include media-breakpoint-up(md)
-    .plugin-pr
-        bottom: 2rem
-        left: 0
-        right: 0
-        .plugin-pr-content
-            border-radius: 16px
-            border: 1px solid $gray-400
-            box-shadow: 0 2px 5px rgba(0,0,0,.1)
-
-@include media-breakpoint-down(sm)
-    .plugin-pr
-        bottom: 0
-        left: 0
-        right: 0
-        background: linear-gradient(180deg, $gray-200, $gray-400)
-        border-top: 1px solid $gray-500
-        .plugin-pr-content
-            background: none
-            padding: 1rem 0
