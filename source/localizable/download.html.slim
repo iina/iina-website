@@ -73,15 +73,23 @@ section#downloads.downloads
                             td = link_to 'Link', release_note_link(c.version)
               a.small href="#full-list" data-toggle="collapse" Show full list
               #full-list.collapse
-                  ul.small.m-0.pl-4
-                      - data.versions.stable.drop(1).each do |v|
-                          li
-                              = link_to v.version, download_link(v.version)
-                              span.release-date.ml-2.text-muted
-                                  | released on&nbsp;
-                                  = v.date
-                              = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
-                                  = t(:release_note)
+                .tables-container.text-muted.small
+                  table
+                    thead
+                      tr
+                        th Version
+                        th Release Date
+                        th System Requirement (arm)
+                        th System Requirement (x86)
+                        th Release Notes
+                    tbody
+                      - data.versions.stable.drop(1).each do |c|
+                        tr
+                          td = link_to c.version, download_link(c.version)
+                          td = c.date
+                          td = c.system_arm
+                          td = c.system_x86
+                          td = link_to 'Link', release_note_link(c.version)
         .dl-card
             h5 Beta releases
             p.text-muted
