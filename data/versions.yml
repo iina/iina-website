@@ -1,83 +1,124 @@
 stable:
+  - version: 1.5.0
+    date: 2025-09-30
+    sha256: 177ad469ea129bed95a82ac59b5fb58d0a06c35342fca7a37dba214a8821f848
+    system_x86: macOS 11.0
+    system_arm: macOS 12.0
   - version: 1.4.1
     date: 2025-09-25
     sha256: 177ad469ea129bed95a82ac59b5fb58d0a06c35342fca7a37dba214a8821f848
+    system_x86: macOS 10.15
+    system_arm: macOS 12.0
   - version: 1.4.0
     date: 2025-09-14
     sha256: 4b9807c88d5d41caa635f0a408323ae3d80a3305476698ac2da4726136a481b8
+    system_x86: macOS 10.15
+    system_arm: macOS 12.0
   - version: 1.3.5
     date: 2024-05-31
     sha256: 3b8b9199f41a18c2aa8b30e5824d0c9daccc1d59176832ea650f533fcbdc6a38
+    system_x86: macOS 10.13
+    system_arm: macOS 11.0
   - version: 1.3.4
     date: 2023-12-31
     sha256: 7de50f5ad4a2fd5b27bf59a31b2060074c05331c7aafa533ad4adab65028d78c
+    system_x86: macOS 10.13
+    system_arm: macOS 11.0
   - version: 1.3.3
     date: 2023-07-20
     sha256: 4b3f6c4bed3bb77dbe29c12bf6d5d0959284afb01c7b59a35fd71a3a27088991
+    system_x86: macOS 10.13
+    system_arm: macOS 11.0
   - version: 1.3.2
     date: 2023-07-07
     sha256: ac5e72bf6407595514b327ffbbbf235919f80badbd18126007f8bc62768a1c19
+    system_x86: macOS 10.13
+    system_arm: macOS 11.0
   - version: 1.3.1
     date: 2022-11-06
     sha256: c646642a2884cb0516922170e0f6d4990b12b41d6244b08d53f318dbb9518c2f
+    system_x86: OS X 10.11
+    system_arm: macOS 11.0
   - version: 1.3.0
     date: 2022-05-30
     sha256: b50c416828005e1eec0dc8066c961efcc389e6be1a5a595541ea62d48d31a391
+    system_x86: OS X 10.11
+    system_arm: macOS 11.0
   - version: 1.2.0
     date: 2021-01-20
     sha256: 91b87e80055f097a1cb7a8c91979deb5303315f2067552cbe7387f48bfc42736
+    system_x86: OS X 10.11
+    system_arm: macOS 11.0
   - version: 1.1.2
     date: 2020-11-19
     sha256: 783ff165c73839c87cf9fd5f4418b87131063c3be77abc94dfca0585aa992b98
+    system_x86: OS X 10.11
   - version: 1.1.1
     date: 2020-11-10
     sha256: ae9ac06459c2b9cd160592881c323d3fb3b50a9b70ba89c6f9f1e13df85c6881
+    system_x86: OS X 10.11
   - version: 1.1.0
     date: 2020-10-13
     sha256: 44346b32137be39f74206181a370dac28ff0ae645d2c809f136f019b11863e27
+    system_x86: OS X 10.11
   - version: 1.0.7
     date: 2020-06-12
     sha256: 1b1938b3a9640b4c26960aefab1ebe077bfaaf4b7a62ccfce5a7e138c9c56d75
+    system_x86: OS X 10.11
   - version: 1.0.6
     date: 2020-01-13
     sha256: 51cce921ef52f00df9b474e230f33d5a947c5b6e4d33aac4213a0e07b4b4a246
+    system_x86: OS X 10.11
   - version: 1.0.5
     date: 2020-01-06
     sha256: 04958c157ee3e71ae822e2ea471f6277b8f2b9b12bb3cc46fd769d9a4f30a05b
+    system_x86: OS X 10.11
   - version: 1.0.4
     date: 2019-05-27
     sha256: e4e4c6ea67e149a4508beb739a2249e2fc8df99a324f738bdcf75b0d3514ea8e
+    system_x86: OS X 10.11
   - version: 1.0.3
     date: 2019-03-31
     sha256: 571e4c4d7f93ea3911fbe0fbbf26150801d8abde28f25409a27aeebf404c82bd
+    system_x86: OS X 10.11
   - version: 1.0.2
     date: 2019-02-23
     sha256: 37b1150073724f588487b6f61649ab73a34dd143dd5730d70d6ee64aa660056a
+    system_x86: OS X 10.11
   - version: 1.0.1
     date: 2019-01-14
     sha256: d060069db88fe50e8184f6fba61e35dd6c06f8e043cf162f5fb88a4d036e1c23
+    system_x86: OS X 10.11
   - version: 1.0.0
     date: 2018-12-25
     sha256: 1af6892fa41b95dd5c0d42be0cfb2dccd52522f716da0b8951a8e87f8e8d4f91
+    system_x86: OS X 10.11
   - version: 0.0.15.1
     date: 2018-04-29
     sha256: 14ed0c7a301f2b5806c23d0e05e1006a82a23c41da9e3a0662f042bd39f15529
+    system_x86: OS X 10.10
   - version: 0.0.15
     date: 2018-01-12
     sha256: 5492a131654eaaed1dd5992bde235467c573c994f4c3cd747f96aa7f26b2f33d
+    system_x86: OS X 10.10
   - version: 0.0.14.1
     date: 2017-10-24
     sha256: 87d04d497e8a4cad7129877e41244248e795593dfbd0a1c8cee086142993c0f1
+    system_x86: OS X 10.10
   - version: 0.0.14
     date: 2017-10-17
     sha256: 0b0de3238fde6cef6afd82993eb08ea6fa567c786f6fab67ab3346b2e2c7fc3b
+    system_x86: OS X 10.10
   - version: 0.0.13
     date: 2017-10-15
     sha256: 7f7886555227fff45b05d3a48ff31c4e70a1c778695f829e747ad4af35342668
+    system_x86: OS X 10.10
 beta:
   - version: 1.4.0-beta1
     date: 2024-04-09
     sha256: 65a8b78468d17b6c60ee5fa284881dc799b1a6f62d32ed315a0933d43fed46a4
+    system_x86: macOS 10.15
+    system_arm: macOS 12.0
   - version: 1.1.0-beta2
     date: 2020-10-07
     sha256: 11f1f22c2b5fb8e6adc338d7122d37f44a1bb73a7d3a4fc3067d5651cfa2a833

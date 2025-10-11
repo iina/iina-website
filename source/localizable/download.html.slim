@@ -20,6 +20,8 @@ section#downloads.downloads
                     = latest.date
                     = link_to release_note_link(latest.version), class: 'release-note ml-2', target: '_blank' do
                         = t(:release_note)
+                .text-muted.small.mt-2
+                    = I18n.t(:requirement, min_version_arm: data.versions.stable.first.system_arm, min_version_x86: data.versions.stable.first.system_x86)
                 .text-muted.small.mt-2.break-all
                     | SHA256:
                     = latest.sha256
@@ -31,21 +33,46 @@ section#downloads.downloads
                             br
                             | You may need to replace the file path with the actual path of the downloaded file.
                         pre.bg-light
-                            = "shasum -a 256 ~/Downloads/IINA.v#{latest.version}.dmg"
+                          = "shasum -a 256 ~/Downloads/IINA.v#{latest.version}.dmg"
             hr.my-4
             .mb-2 
             a href="#more-downloads" data-toggle="collapse" Previous versions
+
             #more-downloads.collapse
-                ul.small.m-0.pl-4
-                    - data.versions.stable.drop(1).each do |v|
-                        li
-                            = link_to v.version, download_link(v.version)
-                            span.release-date.ml-2.text-muted
-                                | released on&nbsp;
-                                = v.date
-                            span ,
-                            = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted', target: '_blank' do
-                                = t(:release_note)
+              .tables-container.text-muted.small
+                .table-box
+                    h6.text-center For Apple Silicon Macs
+                    table
+                      thead
+                        tr
+                          th Version
+                          th Release Date
+                          th System Requirement
+                          th Release Notes
+                      tbody
+                        - filter(data.versions.stable, :system_arm).drop(1).each do |c|
+                          tr
+                            td = link_to c.version, download_link(c.version)
+                            td = c.date
+                            td = c.system_arm
+                            td = link_to 'Link', release_note_link(c.version)
+                .table-box
+                    h6.text-center For Intel Macs
+                    table
+                      thead
+                        tr
+                          th Version
+                          th Release Date
+                          th System Requirement
+                          th Release Notes
+                      tbody
+                        - filter(data.versions.stable, :system_x86).drop(1).each do |c|
+                          tr
+                            td = link_to c.version, download_link(c.version)
+                            td = c.date
+                            td = c.system_x86
+                            td = link_to 'Link', release_note_link(c.version)
+
         .dl-card
             h5 Beta releases
             p.text-muted
@@ -61,6 +88,8 @@ section#downloads.downloads
                     .text-muted.small.mt-2
                         | Released on&nbsp;
                         = latest_beta.date
+                    .text-muted.small.mt-2
+                        = I18n.t(:requirement, min_version_arm: data.versions.beta.first.system_arm, min_version_x86: data.versions.beta.first.system_x86)
                     .text-muted.small.mt-2
                         | SHA256:
                         = latest_beta.sha256

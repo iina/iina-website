@@ -11,3 +11,29 @@
         .stable-btn, .beta-btn
             padding: .375rem 2rem
             border-radius: 1.5rem
+    .tables-container
+      display: flex
+      gap: 2rem
+      flex-wrap: wrap
+      align-items: flex-start
+
+      .table-box
+        flex: 1 1 45%
+        min-width: 320px
+
+      table
+        width: 100%
+        border-collapse: collapse
+
+      th,
+      td
+        text-align: left
+        padding: 0.2rem 0.3rem
+        border-top: 1px solid #ddd
+
+      th
+        background-color: #f6f6f6
+        font-weight: 600
+
+      tr:nth-child(even)
+        background-color: #fafafa
