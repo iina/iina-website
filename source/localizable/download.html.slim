@@ -37,7 +37,6 @@ section#downloads.downloads
             hr.my-4
             .mb-2 
             a href="#more-downloads" data-toggle="collapse" Previous versions
-
             #more-downloads.collapse
               .tables-container.text-muted.small
                 .table-box
@@ -72,7 +71,17 @@ section#downloads.downloads
                             td = c.date
                             td = c.system_x86
                             td = link_to 'Link', release_note_link(c.version)
-
+              a.small href="#full-list" data-toggle="collapse" Show full list
+              #full-list.collapse
+                  ul.small.m-0.pl-4
+                      - data.versions.stable.drop(1).each do |v|
+                          li
+                              = link_to v.version, download_link(v.version)
+                              span.release-date.ml-2.text-muted
+                                  | released on&nbsp;
+                                  = v.date
+                              = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
+                                  = t(:release_note)
         .dl-card
             h5 Beta releases
             p.text-muted
@@ -93,17 +102,7 @@ section#downloads.downloads
                     .text-muted.small.mt-2
                         | SHA256:
                         = latest_beta.sha256
-                hr.my-4
-                h6 Previous versions
-                ul.small.m-0.pl-4
-                    - data.versions.beta.drop(1).each do |v|
-                        li
-                            = link_to v.version, download_link(v.version)
-                            span.release-date.ml-2.text-muted
-                                | released on&nbsp;
-                                = v.date
-                            = link_to release_note_link(v.version), class: 'release-note ml-2 text-muted' do
-                                = t(:release_note)
+
     section#install-homebrew.mt-5
         .container
             h5 Install via Homebrew Cask
