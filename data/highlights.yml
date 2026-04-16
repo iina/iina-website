@@ -95,3 +95,7 @@ v1.4.0:
       WebP and JPEG-XL screenshots, Spatial Audio support via the AVFoundation driver, and more.
   - title: Bug Fixes and Improvements
     desc: IINA 1.4.0 includes a long list of bug fixes and improvements to make IINA more stable.
+
+v1.4.2:
+  - title: Bug Fixes and Improvements
+    desc: IINA 1.4.2 includes important fixes to bugs and crashes to make IINA more stable.
