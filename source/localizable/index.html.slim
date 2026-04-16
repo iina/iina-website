@@ -39,12 +39,12 @@ section.title
                 | &nbsp;GitHub
                 span.light GPLv3
             / br
-            - latest = data.versions.stable.first.version
+            - latest = data.versions.stable.first
             = link_to download_link(latest), class: 'dl-btn dmg' do
                 span.fas.fa-cloud-download-alt
                 | &nbsp;
                 = t(:download)
-                span.light v#{latest}
+                span.light v#{latest.version}
         p.requirement
             = I18n.t(:requirement, min_version_arm: data.versions.stable.first.system_arm, min_version_x86: data.versions.stable.first.system_x86)
         p.other-downloads

@@ -65,8 +65,12 @@ helpers do
     end
   end
 
-  def download_link(version)
-    "https://dl-portal.iina.io/IINA.v#{version}.dmg"
+  def download_link(definition)
+    if definition.filename.nil?
+      "https://dl-portal.iina.io/IINA.v#{definition.version}.dmg"
+    else
+      "https://dl-portal.iina.io/#{definition.filename}"
+    end
   end
 
   def release_note_link(version)

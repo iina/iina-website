@@ -13,7 +13,7 @@ section#downloads.downloads
             .text-center.py-2
                 .text-muted.font-weight-bold.mb-2
                     | Latest stable release
-                = link_to download_link(latest.version), class: 'btn btn-primary stable-btn' do
+                = link_to download_link(latest), class: 'btn btn-primary stable-btn' do
                     = latest.version
                 .text-muted.small.mt-2
                     | Released on&nbsp;
@@ -35,7 +35,7 @@ section#downloads.downloads
                         pre.bg-light
                           = "shasum -a 256 ~/Downloads/IINA.v#{latest.version}.dmg"
             hr.my-4
-            .mb-2 
+            .mb-2
             a href="#more-downloads" data-toggle="collapse" Previous versions
             #more-downloads.collapse
               .tables-container.text-muted.small
@@ -51,7 +51,7 @@ section#downloads.downloads
                       tbody
                         - filter(data.versions.stable, :system_arm).drop(1).each do |c|
                           tr
-                            td = link_to c.version, download_link(c.version)
+                            td = link_to c.version, download_link(c)
                             td = c.date
                             td = c.system_arm
                             td = link_to 'Link', release_note_link(c.version)
@@ -67,7 +67,7 @@ section#downloads.downloads
                       tbody
                         - filter(data.versions.stable, :system_x86).drop(1).each do |c|
                           tr
-                            td = link_to c.version, download_link(c.version)
+                            td = link_to c.version, download_link(c)
                             td = c.date
                             td = c.system_x86
                             td = link_to 'Link', release_note_link(c.version)
@@ -85,7 +85,7 @@ section#downloads.downloads
                     tbody
                       - data.versions.stable.drop(1).each do |c|
                         tr
-                          td = link_to c.version, download_link(c.version)
+                          td = link_to c.version, download_link(c)
                           td = c.date
                           td = c.system_arm
                           td = c.system_x86
@@ -100,7 +100,7 @@ section#downloads.downloads
                 .text-center.py-2
                     .text-muted.font-weight-bold.mb-2
                         | Latest beta release
-                    = link_to download_link(latest_beta.version), class: 'btn btn-secondary beta-btn', target: '_blank' do
+                    = link_to download_link(latest_beta), class: 'btn btn-secondary beta-btn', target: '_blank' do
                         = latest_beta.version
                     .text-muted.small.mt-2
                         | Released on&nbsp;
