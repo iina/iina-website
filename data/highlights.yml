@@ -103,3 +103,7 @@ v1.4.2:
 v1.4.3:
   - title: Bug Fixes and Improvements
     desc: IINA 1.4.3 includes important security fixes and improvements to make IINA more stable.
+
+v1.4.4:
+  - title: Bug Fixes and Improvements
+    desc: IINA 1.4.4 includes important security fixes and improvements to make IINA more stable.
