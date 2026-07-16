@@ -1,0 +1,23 @@
+---
+zh-hant:
+  home: 首頁
+  features: 功能特色
+  translation: 翻譯
+  downloads: 下載
+  github: GitHub
+  release_note: 更新日誌
+  headline_1: 專為 macOS 設計的
+  headline_2: 現代
+  headline_3: 媒體播放器。
+  download: 下載
+  requirement: 需要 OS X %{min_version} 或以上，建議 macOS %{version}
+  download_beta: 下載 Beta 版本或 Nightly 組建
+  macos_header: 專為且獨家提供給現代 macOS。
+  macos_desc: 從 Framework 到使用者介面，IINA 專為現代 macOS 應用程式而生。IINA 使用後 Yosemite 的 macOS 設計語言，並始終追尋著最新科技的腳步，例如力度觸控、觸控列和畫中畫等。
+  macos_dark_mode: 暗色模式
+  macos_dark_mode_desc: 專為 macOS Mojave 暗色模式所打造的使用者介面，IINA 可以調整色彩、圖示和紋理，讓使用者擁有亮眼且一致的外觀。
+  macos_pip: 畫中畫
+  macos_pip_desc: IINA 支援原生畫中畫模式，讓您可以從容地觀看本機或串流影片，而不受任何事物打擾。
+  more_features: 更多特色
+  playback_header: Plays anything.
+  highlights_title: IINA v%{version} 的亮點
